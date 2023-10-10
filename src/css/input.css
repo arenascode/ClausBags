@@ -10,6 +10,10 @@ body {
   /* font-family: 'Great Vibes', cursive; */
   /* font-family: 'Amatic SC', sans-serif; */
 }
+
+.bannerHome {
+  background-image: url('./src/assets/img/heroHome.png');
+}
 .heroTitle {
   font-family: 'Pacifico', cursive;
   letter-spacing: 5px;
