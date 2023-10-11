@@ -1124,6 +1124,10 @@ html {
   border-bottom-right-radius: var(--rounded-btn, 0.5rem);
 }
 
+.fixed {
+  position: fixed;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -1140,8 +1144,16 @@ html {
   height: max;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .w-max {
@@ -1149,12 +1161,44 @@ html {
   width: max-content;
 }
 
+.w-full {
+  width: 100%;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
 .flex-col {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-1 {
@@ -1197,6 +1241,12 @@ html {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-\[\#003300\] {
+  --tw-gradient-from: #003300 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 51 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-\[\#012f5f\] {
   --tw-gradient-to: rgb(1 47 95 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #012f5f var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1215,8 +1265,25 @@ html {
   --tw-gradient-to: #223970b8 var(--tw-gradient-to-position);
 }
 
+.to-\[\#0d800080\] {
+  --tw-gradient-to: #0d800080 var(--tw-gradient-to-position);
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .text-center {
@@ -1273,7 +1340,7 @@ body {
 }
 
 .bannerHome {
-  background-image: url(../assets/img/heroHome.png);
+  background-image: url(/src/assets/img/heroHome.png);
 }
 
 .heroTitle {
@@ -1305,10 +1372,20 @@ button {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.hover\:from-\[\#00408080\]:hover {
+  --tw-gradient-from: #00408080 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 64 128 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .hover\:to-\[\#0d800080\]:hover {
   --tw-gradient-to: #0d800080 var(--tw-gradient-to-position);
 }
 
 .hover\:to-\[\#2c4a7f\]:hover {
   --tw-gradient-to: #2c4a7f var(--tw-gradient-to-position);
+}
+
+.hover\:to-\[\#00408080\]:hover {
+  --tw-gradient-to: #00408080 var(--tw-gradient-to-position);
 }

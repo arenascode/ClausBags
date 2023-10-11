@@ -12,7 +12,7 @@ body {
 }
 
 .bannerHome {
-  background-image: url('./src/assets/img/heroHome.png');
+  background-image: url(/src/assets/img/heroHome.png);
 }
 .heroTitle {
   font-family: 'Pacifico', cursive;
