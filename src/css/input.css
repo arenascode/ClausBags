@@ -4,28 +4,57 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap');
 
-
-body {
-  /* font-family: 'Pacifico'; */
-  /* font-family: 'Great Vibes', cursive; */
-  /* font-family: 'Amatic SC', sans-serif; */
+:root {
+  --title-font: 'Pacifico', cursive;
+  --pharagrap-font: 'Amatic SC', sans-serif;
+  --color-separator: #bf2813
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title-font);
 }
 
+body p {
+  font-family: var(--pharagrap-font);
+  font-weight: 700;
+}
+
+/** Home Section */
 .bannerHome {
-  background-image: url("../assets/img/heroHome.png");
+  background-image: url("../assets/img/heroHome2.png");
 }
-.heroTitle {
-  font-family: 'Pacifico', cursive;
+h1 {
+  font-family: var(--title-font);
   letter-spacing: 5px;
 }
-p {
-  font-family: 'Shadows Into Light Two', cursive;
+.bannerHome p {
+  font-family: 'Amatic SC', cursive;
   font-weight: 700;
   font-size: 2rem;
 }
 
 button {
-  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'Amatic SC', cursive;
   letter-spacing: 5px;
   /* font-size: 5em; */
+}
+
+p {
+  font-family: 'Amatic SC';
+  font-size: x-large;
+}
+
+/** Intro Section */
+.separator {
+        width: 16.438rem;
+        height: 2rem;
+        background-image: url("../assets/img/separator.png");
+        background-repeat: no-repeat;
+        /* border: 0.5px #5e5e5e solid; */
+      }
+/** Carousel Section */
+
+/** Products Details Section */
+
+.productDetailsTitle h2 {
+  font-family: var(--title-font);
 }
