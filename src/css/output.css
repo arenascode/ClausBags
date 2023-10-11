@@ -1148,8 +1148,8 @@ html {
   height: auto;
 }
 
-.min-h-screen {
-  min-height: 100vh;
+.min-h-\[100svh\] {
+  min-height: 100svh;
 }
 
 .w-10 {
