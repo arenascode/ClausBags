@@ -3911,10 +3911,6 @@ details.collapse summary::-webkit-details-marker {
   font-weight: 500;
 }
 
-.font-normal {
-  font-weight: 400;
-}
-
 .font-semibold {
   font-weight: 600;
 }
