@@ -3729,9 +3729,9 @@ details.collapse summary::-webkit-details-marker {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.bg-\[\#bf2813\] {
+.bg-\[\#ad2715\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(191 40 19 / var(--tw-bg-opacity));
+  background-color: rgb(173 39 21 / var(--tw-bg-opacity));
 }
 
 .bg-blue-700 {
@@ -3772,8 +3772,9 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
+.bg-\[\#bf2813\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 40 19 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
