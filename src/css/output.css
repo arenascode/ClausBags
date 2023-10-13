@@ -3459,12 +3459,12 @@ details.collapse summary::-webkit-details-marker {
   height: 1rem;
 }
 
-.h-56 {
-  height: 14rem;
-}
-
 .h-6 {
   height: 1.5rem;
+}
+
+.h-60 {
+  height: 15rem;
 }
 
 .h-9 {
@@ -3815,6 +3815,10 @@ details.collapse summary::-webkit-details-marker {
   padding: 0.625rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -3889,6 +3893,11 @@ details.collapse summary::-webkit-details-marker {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -3929,10 +3938,6 @@ details.collapse summary::-webkit-details-marker {
 
 .leading-tight {
   line-height: 1.25;
-}
-
-.tracking-tight {
-  letter-spacing: -0.025em;
 }
 
 .tracking-wider {
@@ -4045,8 +4050,8 @@ details.collapse summary::-webkit-details-marker {
 }
 
 :root {
-  --title-font: 'Pacifico', cursive;
-  --pharagrap-font: 'Amatic SC', sans-serif;
+  --title-font: 'Great Vibes', cursive;
+  --pharagrap-font: 'Patrick Hand', cursive;
   --color-separator: #bf2813
 
 }
@@ -4057,7 +4062,8 @@ h1, h2, h3, h4, h5, h6 {
 
 body p {
   font-family: var(--pharagrap-font);
-  font-weight: 700;
+  font-weight: 600;
+  text-align: center
 }
 
 /** Home Section */
@@ -4069,6 +4075,17 @@ body p {
 h1 {
   font-family: var(--title-font);
   letter-spacing: 5px;
+}
+
+h2 {
+  line-height: 1.25rem;
+  letter-spacing: 0.2em;
+}
+
+h4 {
+  font-size: 2rem;
+  /* text-wrap: nowrap; */
+  letter-spacing: 0.2rem;
 }
 
 .bannerHome p {
@@ -4086,6 +4103,8 @@ button {
 p {
   font-family: 'Amatic SC';
   font-size: x-large;
+  line-height: 2.5rem;
+  text-align: center;
 }
 
 /** Intro Section */

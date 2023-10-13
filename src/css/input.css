@@ -5,17 +5,19 @@
   @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap');
 
 :root {
-  --title-font: 'Pacifico', cursive;
-  --pharagrap-font: 'Amatic SC', sans-serif;
+  --title-font: 'Great Vibes', cursive;
+  --pharagrap-font: 'Patrick Hand', cursive;
   --color-separator: #bf2813
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--title-font);
 }
 
+
 body p {
   font-family: var(--pharagrap-font);
-  font-weight: 700;
+  font-weight: 600;
+  text-align: center
 }
 
 /** Home Section */
@@ -25,6 +27,15 @@ body p {
 h1 {
   font-family: var(--title-font);
   letter-spacing: 5px;
+}
+h2 {
+  line-height: 1.25rem;
+  letter-spacing: 0.2em;
+}
+h4 {
+  font-size: 2rem;
+  /* text-wrap: nowrap; */
+  letter-spacing: 0.2rem;
 }
 .bannerHome p {
   font-family: 'Amatic SC', cursive;
@@ -41,6 +52,8 @@ button {
 p {
   font-family: 'Amatic SC';
   font-size: x-large;
+  line-height: 2.5rem;
+  text-align: center;
 }
 
 /** Intro Section */
