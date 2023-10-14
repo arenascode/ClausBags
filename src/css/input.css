@@ -44,7 +44,7 @@ h4 {
 }
 
 button {
-  font-family: 'Amatic SC', cursive;
+  font-family: var(--pharagrap-font), cursive;
   letter-spacing: 5px;
   /* font-size: 5em; */
 }
