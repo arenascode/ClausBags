@@ -9,6 +9,9 @@
   --pharagrap-font: 'Patrick Hand', cursive;
   --color-separator: #bf2813
 }
+body {
+  background-color: white;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--title-font);
 }
@@ -64,9 +67,6 @@ p {
 .separator {
         width: 16.438rem;
         height: 2rem;
-        background-image: url("../assets/img/separator.png");
-        background-repeat: no-repeat;
-        /* border: 0.5px #5e5e5e solid; */
       }
 /** Carousel Section */
 
@@ -78,6 +78,8 @@ p {
 
 /** Footer Section */
 
-/* footer {
-  height: 10rem;
-} */
+footer .footerContact {
+ position: absolute;
+ left: 6rem;
+ bottom: -8.95rem
+}
