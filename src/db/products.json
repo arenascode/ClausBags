@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cb1",
+    "nombre": "Claus Bag 1",
+    "imagen": "src/assets/products/HK-06.png",
+    "precio": "55000"
+  },
+  {
+    "id": "cb2",
+    "nombre": "Claus Bag 2",
+    "imagen": "src/assets/products/HK-08.png",
+    "precio": "55000"
+  },
+  {
+    "id": "cb3",
+    "nombre": "Claus Bag 3",
+    "imagen": "src/assets/products/HK-17.png",
+    "precio": "55000"
+  },
+  {
+    "id": "cb4",
+    "nombre": "Claus Bag 4",
+    "imagen": "src/assets/products/HK-X8.png",
+    "precio": "55000"
+  },
+  {
+    "id": "cb5",
+    "nombre": "Claus Bag 5",
+    "imagen": "src/assets/products/HK-32.png",
+    "precio": "55000"
+  },
+  {
+    "id": "cb6",
+    "nombre": "Claus Bag 6",
+    "imagen": "src/assets/products/CB-LineaVerde.jpeg",
+    "precio": "55000"
+  },
+  {
+    "id": "cb7",
+    "nombre": "Claus Bag 7",
+    "imagen": "src/assets/products/CB-LineaRoja.jpeg",
+    "precio": "55000"
+  },
+  {
+    "id": "cb8",
+    "nombre": "Claus Bag 8",
+    "imagen": "src/assets/products/HK-19.jpeg",
+    "precio": "55000"
+  }
+]
