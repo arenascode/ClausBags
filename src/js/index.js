@@ -164,11 +164,11 @@ export function handleItemCount(e) {
 //**TO-DO Make the logic to catch only itemCount of each product and not the others */ DID IT!
 
 //**Add To Cart */
-const cart = []
-
+let cart = []
 if (localStorage.getItem('cart')) {
   cart = JSON.parse(localStorage.getItem('cart'))
 }
+console.log(cart);
 export function addToCart(e) {
   const targetContainer = e.target.closest(".productContainer");
   const itemCountHTML = targetContainer.querySelector(".item-count");
@@ -204,5 +204,64 @@ export function addToCart(e) {
   console.log(productCounts);
   }
 
+//**Show Cart */
+const cartListBtn = document.getElementById('cartList')
+function showCart() {
+  console.log(`testing button`);
+  cart.forEach(cartItem => {
+    const cardProduct = document.createElement('div')
+    cardProduct.setAttribute(
+      "class",
+      "productCartContainer bg-base-100 w-full shadow-xl flex flex-row border-x m-1 rounded-lg"
+    );
+    cardProduct.innerHTML = `<figure class="flex align-top w-28 h-28  pb-0 rounded-lg m-1">
+              <img
+                src=${cartItem.imagen}
+                alt="car!"
+                class="h-auto rounded-lg"
+              />
+            </figure>
+            <div class="card-body p-2 px-1 leading-3">
+              <h5 class="card-title text-[1.2rem] tracking-widest">
+                ${cartItem.nombre.split("_").join(" ")}
+              </h5>
+              <div class="priceContainer flex flex-col">
+                <span
+                  class="text-sm font-medium text-gray-300 dark:text-white line-through"
+                  >$70.000</span
+                >
+                <span class="text-lg font-bold text-green-500 dark:text-white"
+                  >$${cartItem.precio}</span
+                >
+              </div>
+              <!-- Item count buttons -->
+              <div
+                class="flex items-center text-center rounded-full btn btn-sm w-min p-0 flex-nowrap place-self-end mr-2 border-none h-auto"
+              >
+                <button
+                  class="btn-count bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
+                >
+                  <img src="src/assets/icons/menos.png" alt="lessBtn">
+                </button>
+                <span
+                  class="item-count text-lg font-bold px-2 border-t border-b text-gray-700"
+                >
+                  1
+                </span>
+                <button
+                  class="btn-count bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
+                >
+                  <img src="src/assets/icons/agregar.png" alt="addBtn">
+                </button>
+              </div>
 
+              <!-- Buy button -->
+              
+            </div>`;
+    document.querySelector(".modalCartItemsContainer").appendChild(cardProduct);
+  })
+  
+}
+
+cartListBtn.addEventListener('click', showCart)
 

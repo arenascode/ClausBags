@@ -28,23 +28,15 @@
           class="object-contain rounded-full w-max h-auto"
         />
       </div>
-      <div id="cartMenu" class="dropdown ml-20 mr-6">
+      <div id="cartList" class="dropdown ml-20 mr-6">
       <label tabindex="0" class="btn btn-ghost btn-circle">
         <div class="indicator">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-          <span class="badge badge-sm indicator-item cartQty">8</span>
+          <span class="badge badge-sm indicator-item cartQty"></span>
         </div>
       </label>
-      <!-- <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-        <div class="card-body">
-          <span class="font-bold text-lg">8 Items</span>
-          <span class="text-info">Subtotal: $999</span>
-          <div class="card-actions">
-            <button class="btn btn-primary btn-block">View cart</button>
-          </div>
-        </div>
-      </div> -->
-    </div>
+      
+      </div>
       <button class="toggleMobileMenu w-10 flex place-content-end">
         <img src="./src/assets/icons/menuMobile.png" alt="" />
       </button>
@@ -575,6 +567,25 @@
         </div>
       </div>
     </footer>
+    <!-- Modal Cart Container -->
+<div id="modalCartContainer" class="fixed top-0 left-0 w-full h-[95%] bg-black bg-opacity-60 mt-[5.2rem] mb-5">
+  <!-- Modal Cart Content -->
+  <div class="bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95%] h-[80%] overflow-y-scroll rounded-lg">
+    <!-- Modal Cart content here -->
+    <div class="modalCartTitleContainer flex flex-col items-center">
+      <h4 class="text-3xl">Tu Carrito 🛒</h4>
+      <div class="separator flex items-center justify-center">
+            <img src="src/assets/img/separator.png" alt="" />
+          </div>
+    </div>
+    <button id="closeModal" class="absolute top-2.5 right-2.5">
+      <img src="src/assets/icons/cerrar.png" alt="" width="20rem"></button>
+    <div class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3">
+      
+    </div>
+    
+  </div>
+</div>
     <!-- <script src="node_modules/flowbite/dist/flowbite.min.js" type="module"></script>
     </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
