@@ -1,45 +1,43 @@
 // import { Carousel } from "flowbite";
 
-//*To show cartQty in the nav 
+//*To show cartQty in the nav
 
-const cartQtyBadge = document.querySelector('.cartQty')
-
+const cartQtyBadge = document.querySelector(".cartQty");
 
 function showNavBarQty() {
-  const cartLS = JSON.parse(localStorage.getItem('cart'))
+  const cartLS = JSON.parse(localStorage.getItem("cart"));
   if (cartLS) {
-  cartQtyBadge.innerText = cartLS.reduce((count, item) =>
-  count + item.qty 
-, 0)
-} else {
-  cartQtyBadge.innerText = 0
+    cartQtyBadge.innerText = cartLS.reduce(
+      (count, item) => count + item.qty,
+      0
+    );
+  } else {
+    cartQtyBadge.innerText = 0;
+  }
 }
-}
-showNavBarQty()
-
-
+showNavBarQty();
 
 //*Construct the Product to show in the cart.
 
 class Producto {
   constructor(id, nombre, imagen, precio) {
-    this.id = id,
-    this.nombre = nombre,
-    this.imagen = imagen,
-    this.precio = precio
+    (this.id = id),
+      (this.nombre = nombre),
+      (this.imagen = imagen),
+      (this.precio = precio);
   }
 }
 
 //*Create  and show the stock
-let stock = []
-const urlProducts = 'src/db/products.json'
+let stock = [];
+const urlProducts = "src/db/products.json";
 
 fetch(urlProducts)
-  .then(res => res.json())
-  .then(data => {
-    stock = data
+  .then((res) => res.json())
+  .then((data) => {
+    stock = data;
     console.log(stock);
-    showProducts()
+    showProducts();
     const addToCartBtns = document.querySelectorAll(".addToCartBtn");
     addToCartBtns.forEach((addToCartBtn) => {
       addToCartBtn.addEventListener("click", addToCart);
@@ -49,14 +47,12 @@ fetch(urlProducts)
 
     btnsItemCount.forEach((e) => {
       e.addEventListener("click", handleItemCount);
-    }); 
-
-  })
+    });
+  });
 
 function showProducts() {
-    
-  stock.forEach(product => {
-    let productCard = document.createElement('div')
+  stock.forEach((product) => {
+    let productCard = document.createElement("div");
     productCard.setAttribute(
       "class",
       "productContainer bg-base-100 w-full shadow-xl flex flex-row"
@@ -119,25 +115,24 @@ function showProducts() {
             </div>
     `;
 
-    document.querySelector('.catalogoProductsContainer').appendChild(productCard)
-  })
-  }
-
-
+    document
+      .querySelector(".catalogoProductsContainer")
+      .appendChild(productCard);
+  });
+}
 
 //** Item Count */
-const productCounts = {}
+const productCounts = {};
 // let itemCount = 1;
 export function handleItemCount(e) {
-  
-  const targetContainer = e.target.closest('.productContainer')
-  const pid = targetContainer.querySelector('[data-pid]').dataset.pid
+  const targetContainer = e.target.closest(".productContainer");
+  const pid = targetContainer.querySelector("[data-pid]").dataset.pid;
   console.log(pid);
-  const itemCountHTML = targetContainer.querySelector('.item-count')
-  
+  const itemCountHTML = targetContainer.querySelector(".item-count");
+
   if (!targetContainer) {
-    console.error(`Product Container Not Found`)
-    return 
+    console.error(`Product Container Not Found`);
+    return;
   }
   if (!pid) {
     console.error("Product ID not found");
@@ -145,14 +140,14 @@ export function handleItemCount(e) {
   }
   //* Initialize count if not exists
   if (!productCounts[pid]) {
-    productCounts[pid] = 1
+    productCounts[pid] = 1;
     console.log(productCounts);
   }
-  
-  if (e.target.textContent.trim() == '+') {
+
+  if (e.target.textContent.trim() == "+") {
     productCounts[pid]++;
     itemCountHTML.innerText = productCounts[pid];
-  } else if (e.target.textContent.trim() == '-') {
+  } else if (e.target.textContent.trim() == "-") {
     if (productCounts[pid] > 1) {
       productCounts[pid]--;
       itemCountHTML.innerText = productCounts[pid];
@@ -164,9 +159,9 @@ export function handleItemCount(e) {
 //**TO-DO Make the logic to catch only itemCount of each product and not the others */ DID IT!
 
 //**Add To Cart */
-let cart = []
-if (localStorage.getItem('cart')) {
-  cart = JSON.parse(localStorage.getItem('cart'))
+let cart = [];
+if (localStorage.getItem("cart")) {
+  cart = JSON.parse(localStorage.getItem("cart"));
 }
 console.log(cart);
 export function addToCart(e) {
@@ -174,53 +169,76 @@ export function addToCart(e) {
   const itemCountHTML = targetContainer.querySelector(".item-count");
   const pid = e.target.dataset.pid;
   console.log(pid);
-  
-  const productInCartExist = cart.findIndex(product => product.id == pid)
+
+  const productInCartExist = cart.findIndex((product) => product.id == pid);
 
   console.log(productInCartExist);
   if (productInCartExist == -1) {
-    let chosenProduct = new Producto(e.target.dataset.pid, e.target.dataset.name, e.target.dataset.img, e.target.dataset.price)
-    chosenProduct.qty = parseInt(itemCountHTML.textContent)
-    cart.push(chosenProduct)
+    let chosenProduct = new Producto(
+      e.target.dataset.pid,
+      e.target.dataset.name,
+      e.target.dataset.img,
+      e.target.dataset.price
+    );
+    chosenProduct.qty = parseInt(itemCountHTML.textContent);
+    cart.push(chosenProduct);
   } else {
     cart[productInCartExist].qty += parseInt(itemCountHTML.textContent);
   }
-  localStorage.setItem('cart', JSON.stringify(cart))
-  showNavBarQty()
-    console.log(cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  showNavBarQty();
+  console.log(cart);
   // console.log(itemCount);
-  const phoneNumber = 573209389966
-  
+  const phoneNumber = 573209389966;
+
   // const message = `Hola! Quisiera comprar ${itemCount} unidades de la ClausBag ${e.target.dataset.pid} por favor.`
   // console.log(message);
-  
+
   // const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    //   message
-    // )}`;
-    
-    // window.open(whatsappLink, '_blank')
+  //   message
+  // )}`;
+
+  // window.open(whatsappLink, '_blank')
   productCounts[pid] = 1;
   itemCountHTML.innerText = productCounts[pid];
   console.log(productCounts);
-  }
+}
 
+function cartQty() {
+  return cart.reduce((total, item) => total += item.qty, 0)
+}
 //**Show Cart */
-const cartListBtn = document.getElementById('cartList')
+const cartListBtn = document.getElementById("cartList");
+
 function showCart() {
   console.log(`testing button`);
-  cart.forEach(cartItem => {
-    const cardProduct = document.createElement('div')
+  document.querySelector(".modalCartItemsContainer").innerHTML = ``;
+  cart.forEach((cartItem) => {
+    const cardProduct = document.createElement("div");
     cardProduct.setAttribute(
       "class",
       "productCartContainer bg-base-100 w-full shadow-xl flex flex-row border-x m-1 rounded-lg"
     );
-    cardProduct.innerHTML = `<figure class="flex align-top w-28 h-28  pb-0 rounded-lg m-1">
+    cardProduct.innerHTML = `
+    <div>
+      <figure class="flex align-top w-28 h-28  pb-0 rounded-lg m-1">
               <img
                 src=${cartItem.imagen}
                 alt="car!"
                 class="h-auto rounded-lg"
               />
             </figure>
+            <figure class="flex align-top w-7 h-7  pb-0 rounded-lg m-1 items-center">
+              <img
+                src="src/assets/icons/borrarProducto.png"
+                alt="car!"
+                class="h-auto rounded-lg"
+              />
+              <figcaption>
+        Eliminar
+      </figcaption>
+            </figure>
+    </div>
             <div class="card-body p-2 px-1 leading-3">
               <h5 class="card-title text-[1.2rem] tracking-widest">
                 ${cartItem.nombre.split("_").join(" ")}
@@ -239,17 +257,17 @@ function showCart() {
                 class="flex items-center text-center rounded-full btn btn-sm w-min p-0 flex-nowrap place-self-end mr-2 border-none h-auto"
               >
                 <button
-                  class="btn-count bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
+                  class="btnCountCart bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
                 >
                   <img src="src/assets/icons/menos.png" alt="lessBtn">
                 </button>
                 <span
                   class="item-count text-lg font-bold px-2 border-t border-b text-gray-700"
                 >
-                  1
+                  ${cartItem.qty}
                 </span>
                 <button
-                  class="btn-count bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
+                  class="btnCountCart bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
                 >
                   <img src="src/assets/icons/agregar.png" alt="addBtn">
                 </button>
@@ -259,9 +277,19 @@ function showCart() {
               
             </div>`;
     document.querySelector(".modalCartItemsContainer").appendChild(cardProduct);
-  })
-  
+    const countBtns = document.querySelectorAll('.btnCountCart')
+    console.log(countBtns);
+    countBtns.forEach(btn => btn.addEventListener('click', handleItemCount))
+  });
+  document.querySelector(".purchaseQty").innerText = `Tienes ${cartQty()} ClausBags en tu Carrito`;
+  //*To show Modal Cart
+  const modalCartContainer = document.getElementById('modalCartContainer')
+  modalCartContainer.classList.remove('hidden')
+  // modalCartContainer.classList.add('absolute')
+
+  //*To Close Modal Cart
+  const closeModalCartBtn = document.getElementById('closeModalCart')
+  closeModalCartBtn.addEventListener('click', () => modalCartContainer.classList.add('hidden'))
 }
 
-cartListBtn.addEventListener('click', showCart)
-
+cartListBtn.addEventListener("click", showCart);

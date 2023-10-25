@@ -568,7 +568,7 @@
       </div>
     </footer>
     <!-- Modal Cart Container -->
-<div id="modalCartContainer" class="fixed top-0 left-0 w-full h-[95%] bg-black bg-opacity-60 mt-[5.2rem] mb-5">
+<div id="modalCartContainer" class="fixed top-0 left-0 w-full h-[95%] bg-black bg-opacity-60 mt-[5.2rem] mb-5 hidden">
   <!-- Modal Cart Content -->
   <div class="bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95%] h-[80%] overflow-y-scroll rounded-lg">
     <!-- Modal Cart content here -->
@@ -578,12 +578,24 @@
             <img src="src/assets/img/separator.png" alt="" />
           </div>
     </div>
-    <button id="closeModal" class="absolute top-2.5 right-2.5">
+    <button id="closeModalCart" class="absolute top-2.5 right-2.5">
       <img src="src/assets/icons/cerrar.png" alt="" width="20rem"></button>
-    <div class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3">
+    <div class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3 rounded-lg">
       
     </div>
-    
+    <div class="purchaseSummary bg-gray-300 rounded-lg items-start">
+      <div class="purchaseSummarytitle flex flex-col gap-2 items-start ml-2">
+        <p>Resumen de tu Pedido 📝</p>
+        <p class="purchaseQty font-light text-lg tracking-wider">Tienes X ClausBags en tu carrito.</p>
+      </div>
+      <div class="purchaseSummaryCartTotal flex items-start ml-2">
+        <p>Total: $135000</p> 
+      </div>
+    </div>
+    <div class="buyBtnContainer flex flex-col items-center mt-4">
+      <p class="mb-2">Próximo paso:</p>
+      <button class="btn btn-wide">Personalizar <span><img src="src/assets/icons/whatsapp.png" alt="wtspIcon" width="28px"></span></button>
+    </div>
   </div>
 </div>
     <!-- <script src="node_modules/flowbite/dist/flowbite.min.js" type="module"></script>
