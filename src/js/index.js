@@ -217,10 +217,10 @@ function showCart() {
     const cardProduct = document.createElement("div");
     cardProduct.setAttribute(
       "class",
-      "productCartContainer bg-base-100 w-full shadow-xl flex flex-row border-x m-1 rounded-lg"
+      "productContainer bg-base-100 w-full shadow-xl flex flex-row border-x m-1 rounded-lg"
     );
     cardProduct.innerHTML = `
-    <div>
+    <div data-pid=${cartItem.id}>
       <figure class="flex align-top w-28 h-28  pb-0 rounded-lg m-1">
               <img
                 src=${cartItem.imagen}
@@ -257,9 +257,9 @@ function showCart() {
                 class="flex items-center text-center rounded-full btn btn-sm w-min p-0 flex-nowrap place-self-end mr-2 border-none h-auto"
               >
                 <button
-                  class="btnCountCart bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
+                  class="btn-count btn btn-md bg-gray-300 text-white  px-2 rounded-full flex justify-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-10 text-4xl items-start pl-[0.89rem]"
                 >
-                  <img src="src/assets/icons/menos.png" alt="lessBtn">
+                  -
                 </button>
                 <span
                   class="item-count text-lg font-bold px-2 border-t border-b text-gray-700"
@@ -267,9 +267,9 @@ function showCart() {
                   ${cartItem.qty}
                 </span>
                 <button
-                  class="btnCountCart bg-gray-300 text-white py-2 px-2 rounded-full border flex justify-center items-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-8"
+                  class="btn-count btn btn-md bg-gray-300 text-white  rounded-full flex justify-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-10 text-4xl items-start pl-[1.4rem]"
                 >
-                  <img src="src/assets/icons/agregar.png" alt="addBtn">
+                  +
                 </button>
               </div>
 
@@ -277,7 +277,7 @@ function showCart() {
               
             </div>`;
     document.querySelector(".modalCartItemsContainer").appendChild(cardProduct);
-    const countBtns = document.querySelectorAll('.btnCountCart')
+    const countBtns = document.querySelectorAll('.btn-count')
     console.log(countBtns);
     countBtns.forEach(btn => btn.addEventListener('click', handleItemCount))
   });
