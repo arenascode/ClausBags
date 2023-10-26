@@ -3818,10 +3818,6 @@ details.collapse summary::-webkit-details-marker {
   width: 100vw;
 }
 
-.w-9 {
-  width: 2.25rem;
-}
-
 .max-w-sm {
   max-width: 24rem;
 }
@@ -4243,11 +4239,6 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0.75rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -4258,6 +4249,14 @@ details.collapse summary::-webkit-details-marker {
 
 .pl-2 {
   padding-left: 0.5rem;
+}
+
+.pl-\[0\.89rem\] {
+  padding-left: 0.89rem;
+}
+
+.pl-\[1\.4rem\] {
+  padding-left: 1.4rem;
 }
 
 .pr-3 {
@@ -4294,74 +4293,6 @@ details.collapse summary::-webkit-details-marker {
 
 .pt-\[6\.3rem\] {
   padding-top: 6.3rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
-}
-
-.pl-8 {
-  padding-left: 2rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
-}
-
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
-.pl-7 {
-  padding-left: 1.75rem;
-}
-
-.pl-\[\] {
-  padding-left: ;
-}
-
-.pl-\[8rem\] {
-  padding-left: 8rem;
-}
-
-.pl-\[10rem\] {
-  padding-left: 10rem;
-}
-
-.pl-\[2rem\] {
-  padding-left: 2rem;
-}
-
-.pl-\[1rem\] {
-  padding-left: 1rem;
-}
-
-.pl-\[1\.2rem\] {
-  padding-left: 1.2rem;
-}
-
-.pl-\[1\.3rem\] {
-  padding-left: 1.3rem;
-}
-
-.pl-\[1\.4rem\] {
-  padding-left: 1.4rem;
-}
-
-.pl-\[0\.9rem\] {
-  padding-left: 0.9rem;
-}
-
-.pl-\[0\.8rem\] {
-  padding-left: 0.8rem;
-}
-
-.pl-\[0\.85rem\] {
-  padding-left: 0.85rem;
-}
-
-.pl-\[0\.89rem\] {
-  padding-left: 0.89rem;
 }
 
 .text-center {

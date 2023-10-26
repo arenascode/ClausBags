@@ -204,16 +204,14 @@ export function addToCart(e) {
   itemCountHTML.innerText = productCounts[pid];
   console.log(productCounts);
 }
-
-
-
+//**Calculate Products Quantity */
 function cartQty() {
   return cart.reduce((total, item) => total += item.qty, 0)
 }
 //**Show Cart */
 const cartListBtn = document.getElementById("cartList");
-
 function showCart() {
+  cart = JSON.parse(localStorage.getItem("cart"));
   console.log(`testing button`);
   document.querySelector(".modalCartItemsContainer").innerHTML = ``;
   cart.forEach((cartItem) => {
@@ -231,16 +229,18 @@ function showCart() {
                 class="h-auto rounded-lg"
               />
             </figure>
-            <figure class="flex align-top w-7 h-7  pb-0 rounded-lg m-1 items-center">
+            <button class="deleteProductCart flex align-top w-7 h-7 pb-0 rounded-lg m-1 items-center" data-pid=${
+              cartItem.id
+            }>
               <img
                 src="src/assets/icons/borrarProducto.png"
                 alt="car!"
                 class="h-auto rounded-lg"
               />
-              <figcaption>
         Eliminar
-      </figcaption>
-            </figure>
+            
+            </button>
+            
     </div>
             <div class="card-body p-2 px-1 leading-3">
               <h5 class="card-title text-[1.2rem] tracking-widest">
@@ -283,6 +283,11 @@ function showCart() {
     const cartCountBtns = document.querySelectorAll('.btn-cartCount')
     // console.log(cartCountBtns);
     cartCountBtns.forEach(btn => btn.addEventListener('click', handleItemCartCount))
+    //**To delete each product in cart */
+    const deleteProductBtns = document.querySelectorAll(
+      ".deleteProductCart"
+    );
+      deleteProductBtns.forEach(btn => btn.addEventListener('click', deleteProductInCart))
   });
 
   document.querySelector(".purchaseQty").innerText = `Tienes ${cartQty()} ClausBags en tu Carrito`;
@@ -296,7 +301,7 @@ function showCart() {
   const closeModalCartBtn = document.getElementById('closeModalCart')
   closeModalCartBtn.addEventListener('click', () => modalCartContainer.classList.add('hidden'))
 }
-
+//**Add or Less products in cart */
 function handleItemCartCount(e) {
   const targetContainer = e.target.closest(".productContainer");
   const itemCountHTML = targetContainer.querySelector(".item-count");
@@ -317,8 +322,21 @@ function handleItemCartCount(e) {
   }
   localStorage.setItem('cart', JSON.stringify(cart))
   cartQty()
+  showCart()
   showNavBarQty()
 }
 
+//*Delete Product in cart */
+function deleteProductInCart(e) {
+  const pid = e.target.dataset.pid
+  console.log(pid);
+  console.log(cart);
+  const newCart = cart.filter(p => p.id != pid)
+  console.log(newCart);
+  localStorage.setItem('cart', JSON.stringify(newCart))
+  cartQty()
+  showCart()
+  showNavBarQty()
+}
 
 cartListBtn.addEventListener("click", showCart);
