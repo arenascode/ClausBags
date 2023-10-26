@@ -124,6 +124,7 @@ function showProducts() {
 //** Item Count */
 const productCounts = {};
 // let itemCount = 1;
+
 export function handleItemCount(e) {
   const targetContainer = e.target.closest(".productContainer");
   const pid = targetContainer.querySelector("[data-pid]").dataset.pid;
@@ -204,6 +205,8 @@ export function addToCart(e) {
   console.log(productCounts);
 }
 
+
+
 function cartQty() {
   return cart.reduce((total, item) => total += item.qty, 0)
 }
@@ -257,7 +260,7 @@ function showCart() {
                 class="flex items-center text-center rounded-full btn btn-sm w-min p-0 flex-nowrap place-self-end mr-2 border-none h-auto"
               >
                 <button
-                  class="btn-count btn btn-md bg-gray-300 text-white  px-2 rounded-full flex justify-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-10 text-4xl items-start pl-[0.89rem]"
+                  class="btn-cartCount btn btn-md bg-gray-300 text-white  px-2 rounded-full flex justify-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-10 text-4xl items-start pl-[0.89rem]"
                 >
                   -
                 </button>
@@ -267,7 +270,7 @@ function showCart() {
                   ${cartItem.qty}
                 </span>
                 <button
-                  class="btn-count btn btn-md bg-gray-300 text-white  rounded-full flex justify-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-10 text-4xl items-start pl-[1.4rem]"
+                  class="btn-cartCount btn btn-md bg-gray-300 text-white  rounded-full flex justify-center transition duration-300 ease-in-out hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:outline-none w-10 text-4xl items-start pl-[1.4rem]"
                 >
                   +
                 </button>
@@ -277,11 +280,13 @@ function showCart() {
               
             </div>`;
     document.querySelector(".modalCartItemsContainer").appendChild(cardProduct);
-    const countBtns = document.querySelectorAll('.btn-count')
-    console.log(countBtns);
-    countBtns.forEach(btn => btn.addEventListener('click', handleItemCount))
+    const cartCountBtns = document.querySelectorAll('.btn-cartCount')
+    // console.log(cartCountBtns);
+    cartCountBtns.forEach(btn => btn.addEventListener('click', handleItemCartCount))
   });
+
   document.querySelector(".purchaseQty").innerText = `Tienes ${cartQty()} ClausBags en tu Carrito`;
+
   //*To show Modal Cart
   const modalCartContainer = document.getElementById('modalCartContainer')
   modalCartContainer.classList.remove('hidden')
@@ -291,5 +296,29 @@ function showCart() {
   const closeModalCartBtn = document.getElementById('closeModalCart')
   closeModalCartBtn.addEventListener('click', () => modalCartContainer.classList.add('hidden'))
 }
+
+function handleItemCartCount(e) {
+  const targetContainer = e.target.closest(".productContainer");
+  const itemCountHTML = targetContainer.querySelector(".item-count");
+  const pid = targetContainer.querySelector('[data-pid]').dataset.pid;
+  console.log(pid);
+  let productIndex = cart.findIndex((product) => product.id == pid);
+
+  if (e.target.textContent.trim() == "+") {
+    cart[productIndex].qty += 1;
+    itemCountHTML.innerText = cart[productIndex].qty;
+  } else if (e.target.textContent.trim() == "-") {
+    if (cart[productIndex].qty > 1) {
+      cart[productIndex].qty-= 1;
+      itemCountHTML.innerText = cart[productIndex].qty;
+    }
+  } else {
+    console.log(`doesn't should pass for here`);
+  }
+  localStorage.setItem('cart', JSON.stringify(cart))
+  cartQty()
+  showNavBarQty()
+}
+
 
 cartListBtn.addEventListener("click", showCart);
