@@ -364,6 +364,9 @@ function handleItemCartCount(e) {
 function sendOrderToWtsp() {
   console.log(cart);
   const phoneNumber = 573209389966;
+  const orderedCart = cart.map(p => `Nombre: ${(p.nombre).replace(/_/g, ' ')} - Cantidad: ${p.qty}`).join('\n')
+  const message = `Hola, Quisiera Comprar estas ClausBags 🎁: 
+${orderedCart}`;
   // Construct the WhatsApp link.
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
@@ -371,6 +374,7 @@ function sendOrderToWtsp() {
 
   // Open WhatsApp link in a new tab.
   window.open(whatsappLink, "_blank");
+
 }
 //*Delete Product in cart */
 function deleteProductInCart(e) {
