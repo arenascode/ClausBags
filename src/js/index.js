@@ -209,6 +209,17 @@ function cartQty() {
   return cart.reduce((total, item) => (total += item.qty), 0);
 }
 
+//**Calculate Total Cart */
+function totalCart() {
+  const totalCartContainer = document.querySelector(".totalCart");
+  const totalCart = cart.reduce((total, item) => {
+    total += parseInt(item.qty) * parseInt(item.precio);
+    return total;
+  }, 0);
+  console.log(totalCart);
+  totalCartContainer.innerHTML = `Total: <span class='bold'>$${totalCart}</span>`;
+}
+
 //**Show Cart */
 const cartListBtn = document.getElementById("cartList");
 
@@ -217,19 +228,37 @@ function showCart() {
   console.log(`testing button`);
 
   document.querySelector(".modalCartItemsContainer").innerHTML = ``;
-  const wtspBtn = document.querySelector(".buyBtnContainer");
-  wtspBtn.innerHTML = ``
+  const containerBtn = document.querySelector(".buyBtnContainer");
+  containerBtn.innerHTML = ``;
   if (cart.length == 0) {
     document.querySelector(".purchaseQty").innerHTML = `
     <p>Tu carrito está vacío</p>`;
     // wtspBtn.classList.add("hidden");
-    document.querySelector(".buyBtnContainer").innerHTML = `
+    const buyBtnContainer = document.querySelector('.buyBtnContainer')
+    buyBtnContainer.innerHTML = `
     <p class="mb-2">Próximo paso:</p>
-      <a href="#catalogoSection" class="btn btn-wide mt-6 bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-6 shadow-md">
+      <a href="#catalogoSection" id="goCataloge" class="btn btn-wide mt-6 bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-2 shadow-md tracking-widest text-md">
     Explora Todos los Modelos
 </a>`;
+    const goToCatalogeBtn = document.getElementById('goCataloge')
+    // setTimeout(() => {
+      
+    // }, timeout);
+    goToCatalogeBtn.removeEventListener('click', sendOrderToWtsp)
+    goToCatalogeBtn.addEventListener('click', () => {
+      const modalCartContainer = document.getElementById("modalCartContainer");
+      modalCartContainer.classList.add("hidden");
+    })
   } else {
-    cart.forEach((cartItem) => {
+    const orderedCart = cart.sort((a, b) => {
+      const itemA = a.nombre.toLowerCase();
+      const itemB = b.nombre.toLowerCase();
+
+      if (itemA < itemB) return -1;
+      if (itemA > itemB) return 1;
+      return 0;
+    });
+    orderedCart.forEach((cartItem) => {
       const cardProduct = document.createElement("div");
       cardProduct.setAttribute(
         "class",
@@ -314,11 +343,15 @@ function showCart() {
     });
     document.querySelector(".buyBtnContainer").innerHTML = `
     <p class="mb-2">Próximo paso:</p>
-      <button class="btn btn-wide bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-6 shadow-md">
+      <button id="confirmCartBtn" class="btn btn-wide bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-6 shadow-md">
     Personalizar <span class="pl-3"><img src="src/assets/icons/whatsapp.png" alt="wtspIcon" width="28px"></span>
 </button>`;
-    wtspBtn.classList.remove("hidden");
-    wtspBtn.addEventListener('click', sendOrderToWtsp)
+    
+    containerBtn.classList.remove("hidden");
+    document
+      .getElementById("confirmCartBtn")
+      .addEventListener("click", sendOrderToWtsp);
+    totalCart();
   }
 
   //*To show Modal Cart
@@ -364,7 +397,16 @@ function handleItemCartCount(e) {
 function sendOrderToWtsp() {
   console.log(cart);
   const phoneNumber = 573209389966;
-  const orderedCart = cart.map(p => `Nombre: ${(p.nombre).replace(/_/g, ' ')} - Cantidad: ${p.qty}`).join('\n')
+  const orderedCart = cart.sort((a, b) => {
+    const itemA = a.nombre.toLowerCase()
+    const itemB = b.nombre.toLowerCase()
+
+     if (itemA < itemB) return -1;
+     if (itemA > itemB) return 1;
+     return 0; 
+  })
+    .map((p) => `Nombre: ${p.nombre.replace(/_/g, " ")} - Cantidad: ${p.qty}`)
+    .join("\n");
   const message = `Hola, Quisiera Comprar estas ClausBags 🎁: 
 ${orderedCart}`;
   // Construct the WhatsApp link.
@@ -374,7 +416,6 @@ ${orderedCart}`;
 
   // Open WhatsApp link in a new tab.
   window.open(whatsappLink, "_blank");
-
 }
 //*Delete Product in cart */
 function deleteProductInCart(e) {
@@ -387,6 +428,7 @@ function deleteProductInCart(e) {
   cartQty();
   showCart();
   showNavBarQty();
+  totalCart()
 }
 
 //*CustomizeProductOnWtsp */
