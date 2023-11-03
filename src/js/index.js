@@ -360,6 +360,7 @@ function showCart() {
       .getElementById("confirmCartBtn")
       .addEventListener("click", sendOrderToWtsp);
     totalCart();
+    calcualteDiscount()
   }
 
   //*To show Modal Cart
@@ -474,3 +475,31 @@ window.onclick = function (e) {
 hamburguerBtn.addEventListener("click", openModalMenu);
 
 closeModalBtn.addEventListener("click", closeModalMenu);
+
+//**To Open Cart From MobileMenu & PromoSection */
+
+const goToCartBtn = document.querySelector('.goToCart')
+const buyNowBtn = document.getElementById('buyNowBtn')
+
+function showCartFromMobileMenu() {
+  showCart()
+  closeModalMenu()
+}
+
+goToCartBtn.addEventListener('click', showCartFromMobileMenu)
+buyNowBtn.addEventListener("click", showCartFromMobileMenu);
+
+//**To Calculate and show discount */
+
+function calcualteDiscount() {
+  console.log(`calculating disccount`);
+  const disccountMsgContainer = document.getElementById('discountMsg')
+  console.log(cartQty);
+  if (cartQty() >= 3) {
+    console.log(cartQty);
+    disccountMsgContainer.innerHTML= `<p class="text-lg text-green-400">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`
+  } else {
+    disccountMsgContainer.innerHTML = ``
+  }
+}
+

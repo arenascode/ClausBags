@@ -5,7 +5,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap');
 
 :root {
-  --title-font: 'Great Vibes', cursive;
+  --title-font: 'Pacifico', cursive;
   --pharagrap-font: 'Patrick Hand', cursive;
   --color-separator: #bf2813
 }
@@ -14,8 +14,11 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--title-font);
+  font-weight: 600;
 }
-
+a {
+  font-family: var(--pharagrap-font);
+}
 
 body p {
   font-family: var(--pharagrap-font);
@@ -45,11 +48,13 @@ h4 {
   letter-spacing: 0.2rem;
 }
 .bannerHome p {
-  font-family: 'Amatic SC', cursive;
+  font-family: var(--pharagrap-font);
   font-weight: 700;
   font-size: 2rem;
 }
-
+.bannerHome a {
+  font-family: var(--pharagrap-font);
+}
 button {
   font-family: var(--pharagrap-font), cursive;
   letter-spacing: 5px;
@@ -114,7 +119,7 @@ footer .footerContact {
           right: 0;
           height: 100vh;
           width: 60%;
-          background-color: #081c15;
+          background-color: #ffffff;
           z-index: 6;
 }
 #closeModalBtn {
