@@ -29,17 +29,42 @@
         />
       </div>
       <div id="cartList" class="dropdown ml-20 mr-6">
-      <label tabindex="0" class="btn btn-ghost btn-circle">
-        <div class="indicator">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-          <span class="badge badge-sm indicator-item cartQty"></span>
-        </div>
-      </label>
-      
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <div class="indicator">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            <span class="badge badge-sm indicator-item cartQty"></span>
+          </div>
+        </label>
       </div>
-      <button class="toggleMobileMenu w-10 flex place-content-end">
+      <button id="hamburger-btn" class="toggleMobileMenu w-10 flex place-content-end">
         <img src="./src/assets/icons/menuMobile.png" alt="" />
       </button>
+      <div id="navBar_mobileMenu">
+          <div class="mobileMenu_content">
+            <button id="closeModalBtn">
+              <img src="src/assets/icons/cerrar.png" alt="" width="28px"/>
+            </button>
+            <ul class="links_menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#catalogoSection">Catalogo</a></li>
+              <li><a href="#whoIAm">Carrito</a></li>
+              <li><a href="#footerContact">Redes</a></li>
+            </ul>
+          </div>
+      </div>
     </nav>
     <main class="">
       <div id="bannerHome" class="bannerHome hero min-h-[100svh] pt-[6.3rem]">
@@ -444,9 +469,7 @@
         </div>
         <div
           class="catalogoProductsContainer flex flex-wrap gap-4 justify-center pt-7"
-        >
-
-        </div>
+        ></div>
       </section>
       <section id="promoSection" class="pt-14">
         <div class="promoIntro flex flex-col justify-center mb-8">
@@ -556,7 +579,7 @@
     </main>
     <footer class="h-10 opacity-80 relative">
       <img src="src/assets/img/footerImg.png" alt="" />
-      <div class="footerContact flex flex-col items-center">
+      <div id="footerContact" class="footerContact flex flex-col items-center">
         <div class="footerIcons">
           <button>
             <img src="src/assets/icons/instagram.png" width="36px" alt="" />
@@ -568,38 +591,56 @@
       </div>
     </footer>
     <!-- Modal Cart Container -->
-<div id="modalCartContainer" class="fixed top-0 left-0 w-full h-[95%] bg-black bg-opacity-60 mt-[5.2rem] mb-5 hidden z-50">
-  <!-- Modal Cart Content -->
-  <div class="bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95%] h-[80%] overflow-y-scroll rounded-lg">
-    <!-- Modal Cart content here -->
-    <div class="modalCartTitleContainer flex flex-col items-center">
-      <h4 class="text-3xl">Tu Carrito 🛒</h4>
-      <div class="separator flex items-center justify-center">
+    <div
+      id="modalCartContainer"
+      class="fixed top-0 left-0 w-full h-[95%] bg-black bg-opacity-60 mt-[5.2rem] mb-5 hidden z-50"
+    >
+      <!-- Modal Cart Content -->
+      <div
+        class="bg-white p-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95%] h-[80%] overflow-y-scroll rounded-lg"
+      >
+        <!-- Modal Cart content here -->
+        <div class="modalCartTitleContainer flex flex-col items-center">
+          <h4 class="text-3xl">Tu Carrito 🛒</h4>
+          <div class="separator flex items-center justify-center">
             <img src="src/assets/img/separator.png" alt="" />
           </div>
-    </div>
-    <!--Close Modal-->
-    <button id="closeModalCart" class="absolute top-2.5 right-2.5">
-      <img src="src/assets/icons/cerrar.png" alt="" width="20rem"></button>
-    <div class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3 rounded-lg">
-      
-    </div>
-    <!--Purchase Summary-->
-    <div class="purchaseSummary bg-gray-300 rounded-lg items-start">
-      <div class="purchaseSummarytitle flex flex-col gap-2 items-start ml-2">
-        <p>Resumen de tu Pedido 📝</p>
-        <p class="purchaseQty font-light text-lg tracking-wider">Tienes X ClausBags en tu carrito.</p>
+        </div>
+        <!--Close Modal-->
+        <button id="closeModalCart" class="absolute top-2.5 right-2.5">
+          <img src="src/assets/icons/cerrar.png" alt="" width="20rem" />
+        </button>
+        <div
+          class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3 rounded-lg"
+        ></div>
+        <!--Purchase Summary-->
+        <div class="purchaseSummary bg-gray-300 rounded-lg items-start">
+          <div
+            class="purchaseSummarytitle flex flex-col gap-2 items-start ml-2"
+          >
+            <p>Resumen de tu Pedido 📝</p>
+            <p class="purchaseQty font-light text-lg tracking-wider">
+              Tienes X ClausBags en tu carrito.
+            </p>
+          </div>
+          <div class="purchaseSummaryCartTotal flex items-start ml-2">
+            <p class="totalCart">Total: $0</p>
+          </div>
+        </div>
+        <div class="buyBtnContainer flex flex-col items-center mt-4">
+          <p class="mb-2">Próximo paso:</p>
+          <button class="btn btn-wide">
+            Personalizar
+            <span
+              ><img
+                src="src/assets/icons/whatsapp.png"
+                alt="wtspIcon"
+                width="28px"
+            /></span>
+          </button>
+        </div>
       </div>
-      <div class="purchaseSummaryCartTotal flex items-start ml-2">
-        <p class="totalCart">Total: $0</p> 
-      </div>
     </div>
-    <div class="buyBtnContainer flex flex-col items-center mt-4">
-      <p class="mb-2">Próximo paso:</p>
-      <button class="btn btn-wide">Personalizar <span><img src="src/assets/icons/whatsapp.png" alt="wtspIcon" width="28px"></span></button>
-    </div>
-  </div>
-</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="src/js/index.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
