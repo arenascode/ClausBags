@@ -188,18 +188,26 @@ export function addToCart(e) {
   localStorage.setItem("cart", JSON.stringify(cart));
   showNavBarQty();
   console.log(cart);
-  // console.log(itemCount);
-  const phoneNumber = 573209389966;
-
-  // const message = `Hola! Quisiera comprar ${itemCount} unidades de la ClausBag ${e.target.dataset.pid} por favor.`
-  // console.log(message);
-
-  // const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-  //   message
-  // )}`;
-
-  // window.open(whatsappLink, '_blank')
+  
   productCounts[pid] = 1;
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
+  Toast.fire({
+    icon: "success",
+    text: `Añadiste ${parseInt(
+      itemCountHTML.textContent
+    )} ClausBag al carrito `,
+  });
   itemCountHTML.innerText = productCounts[pid];
   console.log(productCounts);
 }
