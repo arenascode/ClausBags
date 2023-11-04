@@ -137,3 +137,7 @@ footer .footerContact {
             flex-direction: column;
             gap: 50px;
           }
+
+
+/* Small (sm) */
+@media (min-width: 640px) { /* ... */ }

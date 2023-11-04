@@ -128,7 +128,7 @@
           data-carousel="slide"
         >
           <!-- Carousel wrapper -->
-          <div class="relative h-60 overflow-hidden rounded-lg md:h-96">
+          <div class="relative h-60 overflow-hidden rounded-lg sm:h-96 md:h-96">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
@@ -283,106 +283,88 @@
             nombre! 🎅✨
           </p>
         </div>
-        <div class="cardsContainer">
+        <div class="cardsContainer sm:flex sm:flex-wrap sm:w-full sm:mx-2">
           <!-- card1 -->
           <div
-            class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5"
+            class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 sm:flex sm:flex-row sm:w-screen sm:p-1"
           >
-            <img
-              class="rounded-t-lg"
+          <div class="imgContainer sm:h-auto sm:w-5/6">
+             <img
+              class="rounded-lg sm:h-full"
               src="src/assets/products/CB1.jpeg"
               alt=""
             />
-            <div class="p-4 items-center">
+          </div>
+            <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
               <h4
-                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white"
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max"
               >
                 Guarda tus Tesoros Navideños 🎁
                 <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400">
-                Nuestras bolsas no son solo para delivery; son tu santuario
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl">
+                Nuestras bolsas son tu santuario
                 personal para envolver y proteger esos regalos que crean
                 sonrisas inolvidables.
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-xl tracking-wider"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3"
               >
                 Quiero una!
-                <svg
-                  class="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
               </a>
             </div>
           </div>
           <!-- Card 2 -->
           <div
-            class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5"
+            class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 sm:flex sm:flex-row-reverse sm:w-screen sm:p-1"
           >
-            <img
-              class="rounded-t-lg"
+          <div class="imgContainer sm:h-auto sm:w-5/6">
+             <img
+              class="rounded-lg sm:h-full"
               src="src/assets/products/HK-06.png"
               alt=""
             />
-            <div class="p-5">
-              <h4 class="mb-3 font-bold text-gray-900 dark:text-white">
+          </div>
+            <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
+              <h4
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max"
+              >
                 Estilo desde el Polo Norte ❄️
+                <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl">
                 Cada bolsa está estampada con datos auténticos, haciendo que
                 cada entrega se sienta como un regalo directo desde el lugar más
                 mágico del mundo: <b>el Polo Norte. </b>
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-xl tracking-wider"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3"
               >
                 Quiero una!
-                <svg
-                  class="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
               </a>
             </div>
           </div>
           <!-- Card 3 -->
           <div
-            class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5"
+            class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 sm:flex sm:flex-row sm:w-screen sm:p-1"
           >
-            <img
-              class="rounded-t-lg"
+          <div class="imgContainer sm:h-auto sm:w-5/6">
+             <img
+              class="rounded-lg sm:h-full"
               src="src/assets/products/CB-LineaVerde.jpeg"
               alt=""
             />
-            <div class="p-5">
-              <h4 class="mb-3 font-bold text-gray-900 dark:text-white">
+          </div>
+            <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
+              <h4
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max"
+              >
                 La Entrega que Deja Huella 🌠
+                <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl sm:mt-5">
                 Imagina el brillo en los ojos de tus seres queridos al recibir
                 un regalo con una bolsa que lleva su nombre.
                 <br />
@@ -391,41 +373,31 @@
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-xl tracking-wider"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 sm:mt-10"
               >
                 Quiero una!
-                <svg
-                  class="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
               </a>
             </div>
           </div>
           <!-- Card 4 -->
           <div
-            class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5"
+            class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 sm:flex sm:flex-row-reverse sm:w-screen sm:p-1"
           >
-            <img
-              class="rounded-t-lg"
+          <div class="imgContainer sm:h-auto sm:w-5/6">
+             <img
+              class="rounded-lg sm:h-full sm:w-full"
               src="src/assets/products/bagSize.png"
               alt=""
             />
-            <div class="p-5">
-              <h4 class="mb-3 font-bold text-gray-900 dark:text-white">
+          </div>
+            <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
+              <h4
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl"
+              >
                 Espacio y Durabilidad, Todo en uno 🌌🛡️
+                <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400 leading-relaxed">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl sm:mt-1">
                 Espaciosas y robustas, diseñadas para acomodar múltiples
                 regalos.
                 <br />
@@ -435,24 +407,9 @@
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-xl tracking-wider"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 sm:mt-2"
               >
                 Quiero una!
-                <svg
-                  class="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
               </a>
             </div>
           </div>
