@@ -4237,22 +4237,20 @@ details.collapse summary::-webkit-details-marker {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-\[\#1baa1b\] {
+  --tw-gradient-from: #1baa1b var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(27 170 27 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-\[\#1cad1c\] {
   --tw-gradient-from: #1cad1c var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(28 173 28 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-\[\#22b822\] {
-  --tw-gradient-from: #22b822 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(34 184 34 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-\[\#1baa1b\] {
-  --tw-gradient-from: #1baa1b var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(27 170 27 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+.to-\[\#3bc03b\] {
+  --tw-gradient-to: #3bc03b var(--tw-gradient-to-position);
 }
 
 .to-\[\#6cff59\] {
@@ -4261,14 +4259,6 @@ details.collapse summary::-webkit-details-marker {
 
 .to-\[\#FF5959\] {
   --tw-gradient-to: #FF5959 var(--tw-gradient-to-position);
-}
-
-.to-\[\#59ff59\] {
-  --tw-gradient-to: #59ff59 var(--tw-gradient-to-position);
-}
-
-.to-\[\#3bc03b\] {
-  --tw-gradient-to: #3bc03b var(--tw-gradient-to-position);
 }
 
 .object-contain {
@@ -4425,6 +4415,11 @@ details.collapse summary::-webkit-details-marker {
   vertical-align: middle;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -4470,11 +4465,6 @@ details.collapse summary::-webkit-details-marker {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-bold {
@@ -4546,6 +4536,11 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgb(49 196 141 / var(--tw-text-opacity));
+}
+
 .text-green-500 {
   --tw-text-opacity: 1;
   color: rgb(14 159 110 / var(--tw-text-opacity));
@@ -4564,11 +4559,6 @@ details.collapse summary::-webkit-details-marker {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-green-400 {
-  --tw-text-opacity: 1;
-  color: rgb(49 196 141 / var(--tw-text-opacity));
 }
 
 .line-through {
@@ -4757,7 +4747,7 @@ p {
 footer .footerContact {
   position: absolute;
   left: 6rem;
-  bottom: -8.95rem
+  bottom: -9.5rem
 }
 
 /** Cart Section  */
