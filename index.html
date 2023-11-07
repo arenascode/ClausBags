@@ -28,6 +28,13 @@
           class="object-contain rounded-full w-max h-auto"
         />
       </div>
+      <div id="navBar_desktopMenu" class="hidden lg:flex text-white">
+        <ul class="flex flex-row text-2xl gap-9">
+            <li><a href="#">Home</a></li>
+            <li><a href="#catalogoSection">Catálogo</a></li>
+            <li><a class="goToCart">Carrito</a></li>
+          </ul>
+      </div>
       <div id="cartList" class="dropdown ml-20 mr-6">
         <label tabindex="0" class="btn btn-ghost btn-circle">
           <div class="indicator">
@@ -51,7 +58,7 @@
       </div>
       <button
         id="hamburger-btn"
-        class="toggleMobileMenu w-10 flex place-content-end"
+        class="toggleMobileMenu w-10 flex place-content-end lg:hidden"
       >
         <img src="./src/assets/icons/menuMobile.png" alt="" />
       </button>
@@ -88,11 +95,11 @@
             class="h-[max] p-1 text-white rounded-2xl shadow-lg bg-opacity-80 flex flex-col gap-1 items-center"
           >
             <h1
-              class="mb-3 text-5xl tracking-widest heroTitle font-light leading-tight"
+              class="mb-3 text-5xl tracking-widest heroTitle font-light leading-tight lg:text-6xl"
             >
               Transforma tus Regalos en un viaje Mágico
             </h1>
-            <p class="mb-5 mt-7 text-3xl leading-relaxed tracking-wider">
+            <p class="mb-5 mt-7 text-3xl leading-relaxed tracking-widest">
               Envía el encanto del polo norte a la puerta de tu casa.
             </p>
             <a href="#catalogoSection"
@@ -106,7 +113,7 @@
       <section id="IntroSection">
         <div class="titleIntro mt-7 flex flex-col items-center">
           <h2
-            class="card-title text-center text-4xl justify-center tracking-widest leading-tight"
+            class="card-title text-center text-4xl justify-center tracking-widest leading-tight lg:text-5xl"
           >
             ✨ Conoce la Magia. Conoce las Bolsas de Delivery Navideñas. ✨
           </h2>
@@ -114,10 +121,12 @@
             <img src="src/assets/img/separator.png" alt="" />
           </div>
         </div>
-        <div class="bodyIntro mt-1 card-body">
-          <p class="text-center">
+        <div class="bodyIntro mt-1 card-body lg:mb-4">
+          <p class="text-center lg:text-3xl lg:tracking-widest">
             En esta temporada festiva, presentamos nuestro regalo especial para
-            ti: ¡Paquetes exclusivos del Polo Norte para tus regalos.
+            ti:
+            <br> 
+            ¡Paquetes exclusivos del Polo Norte para tus regalos!
           </p>
         </div>
       </section>
@@ -268,15 +277,15 @@
       <section id="ProductDetailsSection"
         class="flex flex-col items-center mt-7 p-3"
       >
-        <div class="productDetailsTitle flex flex-col items-center">
-          <h2 class="text-center text-4xl px-2 leading-tight tracking-widest">
+        <div class="productDetailsTitle flex flex-col items-center lg:mb-7">
+          <h2 class="text-center text-4xl px-2 leading-tight tracking-widest lg:text-5xl">
             ¡Desata la Magia de la Navidad:
           </h2>
           <div class="separator flex items-center justify-center mt-5">
             <img src="src/assets/img/separator.png" alt="" />
           </div>
           <br />
-          <p>
+          <p class="lg:text-3xl lg:pt-3">
             Únete a nosotros en este viaje personalizado de magia navideña.
             <br />
             ¡Descubre cómo la Navidad se vuelve aún más especial cuando lleva tu
@@ -297,19 +306,19 @@
           </div>
             <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
               <h4
-                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max"
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max lg:text-3xl"
               >
                 Guarda tus Tesoros Navideños 🎁
                 <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl lg:text-2xl lg:mt-5 lg:tracking-wider">
                 Nuestras bolsas son tu santuario
                 personal para envolver y proteger esos regalos que crean
                 sonrisas inolvidables.
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 lg:mt-20"
               >
                 Quiero una!
               </a>
@@ -328,19 +337,19 @@
           </div>
             <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
               <h4
-                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max"
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max lg:text-3xl"
               >
                 Estilo desde el Polo Norte ❄️
                 <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl lg:text-2xl lg:tracking-wider lg:mt-6">
                 Cada bolsa está estampada con datos auténticos, haciendo que
                 cada entrega se sienta como un regalo directo desde el lugar más
                 mágico del mundo: <b>el Polo Norte. </b>
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 lg:mt-14"
               >
                 Quiero una!
               </a>
@@ -350,7 +359,7 @@
           <div
             class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 sm:flex sm:flex-row sm:w-screen sm:p-1"
           >
-          <div class="imgContainer sm:h-auto sm:w-5/6">
+          <div class="imgContainer sm:h-auto sm:w-5/6 lg:w-8/12 lg:h-auto">
              <img
               class="rounded-lg sm:h-full"
               src="src/assets/products/CB-LineaVerde.jpeg"
@@ -359,12 +368,12 @@
           </div>
             <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
               <h4
-                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max"
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl sm:w-max lg:text-3xl"
               >
                 La Entrega que Deja Huella 🌠
                 <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl sm:mt-5">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl sm:mt-5 lg:text-2xl lg:tracking-wider lg:mt-10">
                 Imagina el brillo en los ojos de tus seres queridos al recibir
                 un regalo con una bolsa que lleva su nombre.
                 <br />
@@ -373,7 +382,7 @@
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 sm:mt-10"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 sm:mt-10 lg:mt-24"
               >
                 Quiero una!
               </a>
@@ -392,12 +401,12 @@
           </div>
             <div class="p-4 flex flex-col items-center sm:flex sm:flex-col sm:p-2">
               <h4
-                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl"
+                class="mb-3 font-bold tracking-wider text-gray-900 dark:text-white sm:text-2xl lg:text-3xl"
               >
                 Espacio y Durabilidad, Todo en uno 🌌🛡️
                 <br />
               </h4>
-              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl sm:mt-1">
+              <p class="mb-3 text-gray-700 dark:text-gray-400 sm:text-xl sm:mt-1 lg:text-2xl lg:tracking-wider lg:mt-7">
                 Espaciosas y robustas, diseñadas para acomodar múltiples
                 regalos.
                 <br />
@@ -407,7 +416,7 @@
               </p>
               <a
                 href="#catalogoSection"
-                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 sm:mt-2"
+                class="inline-flex items-center px-3 py-2 font-medium text-center text-white bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1cad1c] to-[#6cff59] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-2xl tracking-wider self-end sm:mr-3 sm:mt-2 lg:mt-8"
               >
                 Quiero una!
               </a>
@@ -418,7 +427,7 @@
       <section id="catalogoSection" class="pt-8">
         <div class="catalogoIntro flex flex-col justify-center">
           <div class="catalogoTitleIntro flex flex-col items-center">
-            <h2 class="text-center text-4xl px-2 leading-tight tracking-widest">
+            <h2 class="text-center text-4xl px-2 leading-tight tracking-widest lg:text-5xl">
               Explora la Magia en Cada Diseño
             </h2>
             <div class="separator mt-5 flex justify-center">
@@ -426,19 +435,19 @@
             </div>
           </div>
           <div class="catalogoBodyIntro px-2 mt-7">
-            <p>
+            <p class="lg:text-3xl">
               Descubre la colección de envolturas mágicas y entérate de cómo
               cada bolsa transporta la esencia única de la Navidad.
             </p>
             <br />
-            <p>
+            <p class="lg:text-3xl">
               Cada modelo es una obra maestra festiva, diseñada para elevar tus
               celebraciones y hacer que cada entrega sea inolvidable.
             </p>
           </div>
         </div>
         <div
-          class="catalogoProductsContainer flex flex-wrap gap-4 justify-center sm:p-3 pt-7 sm:pt-9 sm:mt-3"
+          class="catalogoProductsContainer flex flex-wrap gap-4 justify-center sm:p-3 pt-7 sm:pt-9 sm:mt-3 lg:mt-5"
         ></div>
       </section>
       <section id="promoSection" class="pt-14">

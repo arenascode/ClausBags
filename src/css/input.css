@@ -167,3 +167,6 @@ footer .footerContact {
  bottom:-20rem
 }
 }
+
+/* Large (lg) */
+@media (min-width: 1024px) { /* ... */ }
