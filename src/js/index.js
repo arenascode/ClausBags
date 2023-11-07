@@ -270,11 +270,11 @@ function showCart() {
       const cardProduct = document.createElement("div");
       cardProduct.setAttribute(
         "class",
-        "productContainer bg-base-100 w-full shadow-xl flex flex-row border-x m-1 rounded-lg"
+        "productContainer w-full shadow-xl flex flex-row p-1 sm:p-2 bg-white rounded-lg border border-gray-300 gap-3"
       );
       cardProduct.innerHTML = `
-    <div data-pid=${cartItem.id}>
-      <figure class="flex align-top w-28 h-28  pb-0 rounded-lg m-1">
+    <div data-pid=${cartItem.id} class="sm:w-40">
+      <figure class="flex align-top w-28 h-28 sm:h-44  pb-0 rounded-lg m-1 sm:w-44">
               <img
                 src=${cartItem.imagen}
                 alt="car!"
@@ -294,8 +294,8 @@ function showCart() {
             </button>
             
     </div>
-            <div class="card-body p-2 px-1 leading-3">
-              <h5 class="card-title text-[1.2rem] tracking-widest">
+            <div class="card-body p-2 px-1 leading-3 sm:ml-8">
+              <h5 class="card-title text-[1.2rem] tracking-widest sm:text-xl">
                 ${cartItem.nombre.split("_").join(" ")}
               </h5>
               <div class="priceContainer flex flex-col">
@@ -497,7 +497,7 @@ function calcualteDiscount() {
   console.log(cartQty);
   if (cartQty() >= 3) {
     console.log(cartQty);
-    disccountMsgContainer.innerHTML= `<p class="text-lg text-green-400">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`
+    disccountMsgContainer.innerHTML= `<p class="text-lg sm:text-xl text-green-400">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`
   } else {
     disccountMsgContainer.innerHTML = ``
   }

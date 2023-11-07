@@ -60,7 +60,7 @@
           <button id="closeModalBtn">
             <img src="src/assets/icons/cerrar.png" alt="" width="28px" />
           </button>
-          <ul class="links_menu">
+          <ul class="links_menu ">
             <li><a href="#">Home</a></li>
             <li><a href="#catalogoSection">Catálogo</a></li>
             <li><a class="goToCart">Carrito</a></li>
@@ -477,7 +477,7 @@
               La forma perfecta de regalar y decorar con encanto esta temporada.
             </p>
             <p class="font-bold">¡No dejes que se escape la magia!</p>
-            <div class="btnCTA flex justify-center">
+            <div class="btnCTA flex justify-center sm:mt-5">
               <button id="buyNowBtn"
                 class="bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1baa1b] to-[#3bc03b] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 rounded-full text-white px-4 py-2 mt-4 align-middle text-2xl"
               >
@@ -489,57 +489,57 @@
       </section>
       <section id="purchaseProcess" class="w-screen flex flex-col items-center">
         <h4 class="text-center mt-2">El Proceso Es Simple</h4>
-        <div class="iconsContainer p-2 pt-6 flex">
+        <div class="iconsContainer p-2 pt-6 flex sm:gap-6 sm:mt-8 sm:p-1">
           <!-- item 1 -->
           <div class="item">
-            <figure class="w-10 flex flex-col items-center">
+            <figure class="w-10 flex flex-col items-cente sm:w-12">
               <img
                 src="src/assets/icons/takeProduct.png"
                 alt="Descripción de la imagen"
               />
-              <figcaption class="text-[1.1rem]">
+              <figcaption class="text-[1.1rem] sm:text-xl">
                 Selecciona tu ClausBag
               </figcaption>
             </figure>
           </div>
-          <figure class="separatorImg w-12 ml-1 align-top pt-4">
+          <figure class="separatorImg w-12 ml-1 align-top pt-4 sm:w-14">
             <img src="src/assets/img/separator.png" alt="" />
           </figure>
           <!-- item 2 -->
           <div class="item pl-2">
-            <figure class="w-10 flex flex-col items-center">
+            <figure class="w-10 flex flex-col items-center sm:w-12">
               <img
                 src="src/assets/icons/whatsapp.png"
                 alt="Descripción de la imagen"
               />
-              <figcaption class="text-[1.1rem]">
+              <figcaption class="text-[1.1rem] sm:text-xl">
                 Envianos el nombre a personalizar
               </figcaption>
             </figure>
           </div>
-          <figure class="separatorImg w-12 ml-1 align-top pt-4">
+          <figure class="separatorImg w-12 ml-1 align-top pt-4 sm:w-14">
             <img src="src/assets/img/separator.png" alt="" />
           </figure>
           <!-- item 3 -->
           <div class="item pl-2">
-            <figure class="w-10 flex flex-col items-center">
+            <figure class="w-10 flex flex-col items-center sm:w-12">
               <img
                 src="src/assets/icons/pago.png"
                 alt="Descripción de la imagen"
               />
-              <figcaption class="text-[1.1rem]">Realizas el Pago</figcaption>
+              <figcaption class="text-[1.1rem] sm:text-xl">Realizas el Pago</figcaption>
             </figure>
           </div>
-          <figure class="separatorImg w-12 ml-1 align-top pt-4">
+          <figure class="separatorImg w-12 ml-1 align-top pt-4 sm:w-14">
             <img src="src/assets/img/separator.png" alt="" />
           </figure>
           <!-- item 4 -->
           <div class="item pl-2">
-            <figure class="w-10 flex flex-col items-center">
+            <figure class="w-10 flex flex-col items-center sm:w-12">
               <div class="imgContainer flex">
                 <img src="src/assets/icons/logistics-delivery.png" alt="" />
               </div>
-              <figcaption class="text-[1.1rem]">
+              <figcaption class="text-[1.1rem] sm:text-xl">
                 Enviamos tu ClausBag
               </figcaption>
             </figure>
@@ -583,23 +583,23 @@
           <img src="src/assets/icons/cerrar.png" alt="" width="20rem" />
         </button>
         <div
-          class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3 rounded-lg"
+          class="modalCartItemsContainer flex flex-col items-center pt-3 pb-3 rounded-lg gap-3"
         ></div>
         <!--Purchase Summary-->
-        <div class="purchaseSummary bg-gray-300 rounded-lg items-start">
+        <div class="purchaseSummary bg-gray-300 rounded-lg items-start sm:h-40 sm:gap-7">
           <div
             class="purchaseSummarytitle flex flex-col gap-2 items-start ml-2"
           >
             <p>Resumen de tu Pedido 📝</p>
-            <p class="purchaseQty font-light text-lg tracking-wider">
+            <p class="purchaseQty font-light text-lg tracking-wider sm:text-xl">
               Tienes X ClausBags en tu carrito.
             </p>
           </div>
-          <div class="purchaseSummaryCartTotal flex items-start ml-2">
+          <div class="purchaseSummaryCartTotal flex items-start ml-2 sm:mt-6">
             <p class="totalCart">Total: $0</p>
           </div>
         </div>
-        <div id="discountMsg"></div>
+        <div id="discountMsg" ></div>
         <div class="buyBtnContainer flex flex-col items-center mt-4">
           <p class="mb-2">Próximo paso:</p>
           <button class="btn btn-wide">

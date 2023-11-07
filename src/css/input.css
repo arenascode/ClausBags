@@ -140,4 +140,21 @@ footer .footerContact {
 
 
 /* Small (sm) */
-@media (min-width: 640px) { /* ... */ }
+@media (min-width: 640px) {
+  .mobileMenu_content {
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: 40%;
+          background-color: #ffffff;
+          z-index: 6;
+          padding-left: 2rem;
+}
+footer .footerContact {
+ position: absolute;
+ left: 13.5rem;
+ bottom:-16rem
+}
+
+}
