@@ -55,7 +55,7 @@ function showProducts() {
     let productCard = document.createElement("div");
     productCard.setAttribute(
       "class",
-      "productContainer bg-base-100 w-full shadow-xl flex flex-row"
+      "productContainer w-full shadow-xl flex flex-row p-1 sm:p-4 bg-white rounded-lg border border-gray-300"
     );
     productCard.innerHTML = `
       <figure class="flex align-top w-52 pb-0 rounded-lg">
