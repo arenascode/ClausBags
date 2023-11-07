@@ -158,3 +158,12 @@ footer .footerContact {
 }
 
 }
+
+/* Medium (md) */
+@media (min-width: 768px) { 
+  footer .footerContact {
+ position: absolute;
+ left: 18rem;
+ bottom:-20rem
+}
+}

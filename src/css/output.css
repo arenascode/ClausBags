@@ -3941,16 +3941,16 @@ details.collapse summary::-webkit-details-marker {
   gap: 0.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -4028,11 +4028,6 @@ details.collapse summary::-webkit-details-marker {
 
 .border-0 {
   border-width: 0px;
-}
-
-.border-x {
-  border-left-width: 1px;
-  border-right-width: 1px;
 }
 
 .border-b {
@@ -4736,6 +4731,16 @@ footer .footerContact {
   }
 }
 
+/* Medium (md) */
+
+@media (min-width: 768px) {
+  footer .footerContact {
+    position: absolute;
+    left: 18rem;
+    bottom:-20rem
+  }
+}
+
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -4948,6 +4953,10 @@ footer .footerContact {
     margin-right: 0.5rem;
   }
 
+  .sm\:ml-8 {
+    margin-left: 2rem;
+  }
+
   .sm\:mr-3 {
     margin-right: 0.75rem;
   }
@@ -4972,28 +4981,24 @@ footer .footerContact {
     margin-top: 1.25rem;
   }
 
-  .sm\:mt-8 {
-    margin-top: 2rem;
-  }
-
-  .sm\:ml-10 {
-    margin-left: 2.5rem;
-  }
-
-  .sm\:ml-8 {
-    margin-left: 2rem;
-  }
-
-  .sm\:mt-4 {
-    margin-top: 1rem;
-  }
-
   .sm\:mt-6 {
     margin-top: 1.5rem;
   }
 
+  .sm\:mt-8 {
+    margin-top: 2rem;
+  }
+
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:h-40 {
+    height: 10rem;
+  }
+
+  .sm\:h-44 {
+    height: 11rem;
   }
 
   .sm\:h-96 {
@@ -5008,20 +5013,20 @@ footer .footerContact {
     height: 100%;
   }
 
-  .sm\:h-44 {
-    height: 11rem;
-  }
-
-  .sm\:h-40 {
-    height: 10rem;
-  }
-
   .sm\:w-12 {
     width: 3rem;
   }
 
   .sm\:w-14 {
     width: 3.5rem;
+  }
+
+  .sm\:w-40 {
+    width: 10rem;
+  }
+
+  .sm\:w-44 {
+    width: 11rem;
   }
 
   .sm\:w-5\/6 {
@@ -5039,22 +5044,6 @@ footer .footerContact {
 
   .sm\:w-screen {
     width: 100vw;
-  }
-
-  .sm\:w-3 {
-    width: 0.75rem;
-  }
-
-  .sm\:w-32 {
-    width: 8rem;
-  }
-
-  .sm\:w-40 {
-    width: 10rem;
-  }
-
-  .sm\:w-44 {
-    width: 11rem;
   }
 
   .sm\:flex-row {
@@ -5075,14 +5064,6 @@ footer .footerContact {
 
   .sm\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .sm\:gap-3 {
-    gap: 0.75rem;
-  }
-
-  .sm\:gap-4 {
-    gap: 1rem;
   }
 
   .sm\:gap-7 {
@@ -5116,11 +5097,6 @@ footer .footerContact {
 
   .sm\:text-xl {
     font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
