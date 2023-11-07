@@ -2,17 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap");
 
 :root {
-  --title-font: 'Pacifico', cursive;
-  --pharagrap-font: 'Patrick Hand', cursive;
-  --color-separator: #bf2813
+  --title-font: "Pacifico", cursive;
+  --pharagrap-font: "Patrick Hand", cursive;
+  --color-separator: #bf2813;
 }
 body {
   background-color: white;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--title-font);
   font-weight: 600;
 }
@@ -23,7 +28,7 @@ a {
 body p {
   font-family: var(--pharagrap-font);
   font-weight: 600;
-  text-align: center
+  text-align: center;
 }
 figcaption {
   font-family: var(--pharagrap-font);
@@ -62,7 +67,7 @@ button {
 }
 
 p {
-  font-family: 'Amatic SC';
+  font-family: "Amatic SC";
   font-size: x-large;
   line-height: 2.5rem;
   text-align: center;
@@ -70,9 +75,9 @@ p {
 
 /** Intro Section */
 .separator {
-        width: 16.438rem;
-        height: 2rem;
-      }
+  width: 16.438rem;
+  height: 2rem;
+}
 /** Carousel Section */
 
 /** Products Details Section */
@@ -84,9 +89,9 @@ p {
 /** Footer Section */
 
 footer .footerContact {
- position: absolute;
- left: 6rem;
- bottom: -9.5rem
+  position: absolute;
+  left: 6rem;
+  bottom: -9.5rem;
 }
 
 /** Cart Section  */
@@ -96,77 +101,89 @@ footer .footerContact {
 
 /** Mobile Menu Section  */
 #navBar_mobileMenu {
-        display: none;
-        opacity: 0;
-        font-family: var(--pharagrap-font);
-        letter-spacing: 1.8px;
-        font-size: 1.2rem;
-        width: 100%;
-        height: 100vh;
-        z-index: 6;
-        background-color: #000;
-        background-color: rgba(0,0,0,0.4);
-        position: fixed;
-        top: 0;
-        left: 0;
-        transition-property: opacity;
-        transition-duration: 0.7s;
-        transition-timing-function: ease-in-out;
+  display: none;
+  opacity: 0;
+  font-family: var(--pharagrap-font);
+  letter-spacing: 1.8px;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100vh;
+  z-index: 6;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition-property: opacity;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
 }
 .mobileMenu_content {
-          position: fixed;
-          top: 0;
-          right: 0;
-          height: 100vh;
-          width: 60%;
-          background-color: #ffffff;
-          z-index: 6;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60%;
+  background-color: #ffffff;
+  z-index: 6;
 }
 #closeModalBtn {
-            height: 42px;
-            width: 42px;
-            position: absolute;
-            right: 0;
-            top: 0;
-            margin: 10px;
-          }
-          .links_menu {
-            margin-top: 130px;
-            margin-left: 50px;
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-          }
-
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+}
+.links_menu {
+  margin-top: 130px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
 
 /* Small (sm) */
 @media (min-width: 640px) {
   .mobileMenu_content {
-          position: fixed;
-          top: 0;
-          right: 0;
-          height: 100vh;
-          width: 40%;
-          background-color: #ffffff;
-          z-index: 6;
-          padding-left: 2rem;
-}
-footer .footerContact {
- position: absolute;
- left: 13.5rem;
- bottom:-16rem
-}
-
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 40%;
+    background-color: #ffffff;
+    z-index: 6;
+    padding-left: 2rem;
+  }
+  footer .footerContact {
+    position: absolute;
+    left: 13.5rem;
+    bottom: -20px;
+  }
 }
 
 /* Medium (md) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   footer .footerContact {
- position: absolute;
- left: 18rem;
- bottom:-20rem
-}
+    position: absolute;
+    left: 18rem;
+    bottom: -16rem;
+  }
 }
 
 /* Large (lg) */
-@media (min-width: 1024px) { /* ... */ }
+@media (min-width: 1024px) {
+  footer .footerContact {
+    position: absolute;
+    left: 24rem;
+    bottom: 1rem;
+  }
+  
+  footer {
+    /* background-image: url('../assets/img/footerImg.png'); */
+    /* height: 340px; */
+    background-position: top;
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
+}

@@ -55,7 +55,7 @@ function showProducts() {
     let productCard = document.createElement("div");
     productCard.setAttribute(
       "class",
-      "productContainer w-full shadow-xl flex flex-row p-1 sm:p-4 bg-white rounded-lg border border-gray-300 lg:w-[49%]"
+      "productContainer w-full shadow-xl flex flex-row p-1 sm:p-4 bg-white rounded-lg border border-gray-300  md:w-[48%] lg:w-[49%]"
     );
     productCard.innerHTML = `
       <figure class="flex align-top w-52 pb-0 rounded-lg">
@@ -270,7 +270,7 @@ function showCart() {
       const cardProduct = document.createElement("div");
       cardProduct.setAttribute(
         "class",
-        "productContainer w-full shadow-xl flex flex-row p-1 sm:p-2 bg-white rounded-lg border border-gray-300 gap-3"
+        "productContainer w-full shadow-xl flex flex-row p-1 sm:p-2 bg-white rounded-lg border border-gray-300 gap-3 lg:w-[41%]"
       );
       cardProduct.innerHTML = `
     <div data-pid=${cartItem.id} class="sm:w-40">
@@ -497,7 +497,7 @@ function calcualteDiscount() {
   console.log(cartQty);
   if (cartQty() >= 3) {
     console.log(cartQty);
-    disccountMsgContainer.innerHTML= `<p class="text-lg sm:text-xl text-green-400">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`
+    disccountMsgContainer.innerHTML = `<p class="text-lg sm:text-xl text-green-400 lg:text-3xl">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`;
   } else {
     disccountMsgContainer.innerHTML = ``
   }
