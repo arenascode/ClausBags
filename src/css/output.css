@@ -3953,14 +3953,6 @@ details.collapse summary::-webkit-details-marker {
   gap: 2rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
-}
-
-.gap-7 {
-  gap: 1.75rem;
-}
-
 .gap-9 {
   gap: 2.25rem;
 }
@@ -5011,10 +5003,6 @@ footer .footerContact {
     display: flex;
   }
 
-  .sm\:hidden {
-    display: none;
-  }
-
   .sm\:h-40 {
     height: 10rem;
   }
@@ -5124,10 +5112,6 @@ footer .footerContact {
 }
 
 @media (min-width: 768px) {
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:h-96 {
     height: 24rem;
   }
@@ -5138,52 +5122,32 @@ footer .footerContact {
     margin-bottom: 1rem;
   }
 
-  .lg\:mb-3 {
-    margin-bottom: 0.75rem;
-  }
-
-  .lg\:mb-5 {
-    margin-bottom: 1.25rem;
-  }
-
-  .lg\:mb-6 {
-    margin-bottom: 1.5rem;
-  }
-
   .lg\:mb-7 {
     margin-bottom: 1.75rem;
-  }
-
-  .lg\:mt-3 {
-    margin-top: 0.75rem;
-  }
-
-  .lg\:mt-5 {
-    margin-top: 1.25rem;
   }
 
   .lg\:mt-10 {
     margin-top: 2.5rem;
   }
 
-  .lg\:mt-16 {
-    margin-top: 4rem;
+  .lg\:mt-14 {
+    margin-top: 3.5rem;
   }
 
   .lg\:mt-20 {
     margin-top: 5rem;
   }
 
-  .lg\:mt-6 {
-    margin-top: 1.5rem;
-  }
-
-  .lg\:mt-14 {
-    margin-top: 3.5rem;
-  }
-
   .lg\:mt-24 {
     margin-top: 6rem;
+  }
+
+  .lg\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .lg\:mt-6 {
+    margin-top: 1.5rem;
   }
 
   .lg\:mt-7 {
@@ -5194,10 +5158,6 @@ footer .footerContact {
     margin-top: 2rem;
   }
 
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:flex {
     display: flex;
   }
@@ -5206,69 +5166,24 @@ footer .footerContact {
     display: none;
   }
 
-  .lg\:h-10 {
-    height: 2.5rem;
-  }
-
   .lg\:h-auto {
     height: auto;
-  }
-
-  .lg\:h-8 {
-    height: 2rem;
-  }
-
-  .lg\:w-4\/6 {
-    width: 66.666667%;
-  }
-
-  .lg\:w-3\/6 {
-    width: 50%;
-  }
-
-  .lg\:w-10 {
-    width: 2.5rem;
-  }
-
-  .lg\:w-80 {
-    width: 20rem;
-  }
-
-  .lg\:w-96 {
-    width: 24rem;
-  }
-
-  .lg\:w-auto {
-    width: auto;
-  }
-
-  .lg\:w-10\/12 {
-    width: 83.333333%;
   }
 
   .lg\:w-8\/12 {
     width: 66.666667%;
   }
 
-  .lg\:justify-end {
-    justify-content: flex-end;
+  .lg\:w-\[\] {
+    width: ;
   }
 
-  .lg\:self-end {
-    align-self: flex-end;
+  .lg\:w-\[49\%\] {
+    width: 49%;
   }
 
   .lg\:pt-3 {
     padding-top: 0.75rem;
-  }
-
-  .lg\:align-bottom {
-    vertical-align: bottom;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .lg\:text-2xl {
@@ -5281,11 +5196,6 @@ footer .footerContact {
     line-height: 2.25rem;
   }
 
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -5296,27 +5206,11 @@ footer .footerContact {
     line-height: 1;
   }
 
-  .lg\:tracking-widest {
-    letter-spacing: 0.1em;
-  }
-
   .lg\:tracking-wider {
     letter-spacing: 0.05em;
   }
 
-  .lg\:tracking-wide {
-    letter-spacing: 0.025em;
-  }
-
-  .lg\:-tracking-wide {
-    letter-spacing: -0.025em;
-  }
-
-  .lg\:-tracking-wider {
-    letter-spacing: -0.05em;
-  }
-
-  .lg\:-tracking-widest {
-    letter-spacing: -0.1em;
+  .lg\:tracking-widest {
+    letter-spacing: 0.1em;
   }
 }
