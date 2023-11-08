@@ -107,7 +107,7 @@ function showProducts() {
                   data-name=${product.nombre.replaceAll(" ", "_")}
                   data-price=${product.precio}
                   data-img=${product.imagen}
-                  class="addToCartBtn btn btn-primary btn-sm rounded-full bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] border-none text-white mt-5"
+                  class="addToCartBtn btn btn-primary btn-sm rounded-full bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#50c540] border-none text-white mt-5 xl:text-xl"
                 >
                   La Quiero!
                 </button>
@@ -244,8 +244,8 @@ function showCart() {
     // wtspBtn.classList.add("hidden");
     const buyBtnContainer = document.querySelector('.buyBtnContainer')
     buyBtnContainer.innerHTML = `
-    <p class="mb-2">Próximo paso:</p>
-      <a href="#catalogoSection" id="goCataloge" class="btn btn-wide mt-6 bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-2 shadow-md tracking-widest text-md">
+    <p class="mb-2 lg:text-4xl">Próximo paso:</p>
+      <a href="#catalogoSection" id="goCataloge" class="btn btn-wide mt-6 bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-2 shadow-md tracking-widest text-lg lg:text-md lg:p-2.5 lg:w-max">
     Explora Todos los Modelos
 </a>`;
     const goToCatalogeBtn = document.getElementById('goCataloge')
@@ -350,8 +350,8 @@ function showCart() {
       ).innerText = `Tienes ${cartQty()} ClausBags en tu Carrito`;
     });
     document.querySelector(".buyBtnContainer").innerHTML = `
-    <p class="mb-2">Próximo paso:</p>
-      <button id="confirmCartBtn" class="btn btn-wide bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-6 shadow-md">
+    <p class="mb-2 lg:text-4xl lg:mb-6">Próximo paso:</p>
+      <button id="confirmCartBtn" class="btn btn-wide bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-6 shadow-md lg:text-2xl lg:p-1.5">
     Personalizar <span class="pl-3"><img src="src/assets/icons/whatsapp.png" alt="wtspIcon" width="28px"></span>
 </button>`;
     
@@ -478,15 +478,18 @@ closeModalBtn.addEventListener("click", closeModalMenu);
 
 //**To Open Cart From MobileMenu & PromoSection */
 
-const goToCartBtn = document.querySelector('.goToCart')
+const goToCartBtn = document.querySelector(".goToCart");
+const goToCartBtnMobile = document.querySelector('.goToCartFromMobile')
 const buyNowBtn = document.getElementById('buyNowBtn')
 
 function showCartFromMobileMenu() {
+  console.log(`hii`);
   showCart()
   closeModalMenu()
 }
 
 goToCartBtn.addEventListener('click', showCartFromMobileMenu)
+goToCartBtnMobile.addEventListener('click', showCartFromMobileMenu)
 buyNowBtn.addEventListener("click", showCartFromMobileMenu);
 
 //**To Calculate and show discount */

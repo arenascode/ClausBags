@@ -55,7 +55,7 @@ h4 {
 .bannerHome p {
   font-family: var(--pharagrap-font);
   font-weight: 700;
-  font-size: 2rem;
+  /* font-size: 2rem; */
 }
 .bannerHome a {
   font-family: var(--pharagrap-font);
@@ -144,7 +144,7 @@ footer .footerContact {
 }
 
 /* Small (sm) */
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 767px) {
   .mobileMenu_content {
     position: fixed;
     top: 0;
@@ -163,27 +163,44 @@ footer .footerContact {
 }
 
 /* Medium (md) */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   footer .footerContact {
     position: absolute;
     left: 18rem;
-    bottom: -16rem;
+    bottom: 0;
   }
 }
 
 /* Large (lg) */
-@media (min-width: 1024px) {
-  footer .footerContact {
-    position: absolute;
-    left: 24rem;
-    bottom: 1rem;
-  }
-  
+@media (min-width: 1024px) and (max-width: 1279px) {
   footer {
     /* background-image: url('../assets/img/footerImg.png'); */
     /* height: 340px; */
     background-position: top;
     object-fit: cover;
     background-repeat: no-repeat;
+  }
+  footer .footerContact {
+    position: absolute;
+    left: 24rem;
+    bottom: 1rem;
+  }
+}
+
+/* Extra Large (xl) */
+@media (min-width: 1280px) and (max-width: 1399px) {
+  footer .footerContact {
+    position: absolute;
+    left: 32rem;
+    bottom: 1rem;
+  }
+}
+
+/* Extra extra Large (xxl) */
+@media (min-width: 1400px) {
+  footer .footerContact {
+    position: absolute;
+    left: 38rem;
+    bottom: 1rem;
   }
 }
