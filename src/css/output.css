@@ -4146,6 +4146,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 0.8;
 }
 
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
+}
+
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -4598,7 +4602,7 @@ figcaption {
 /** Home Section */
 
 .bannerHome {
-  background-image: url("../assets/img/heroHome2.png");
+  background-image: url("../assets/img/Hero.webp");
 }
 
 h1 {

@@ -37,7 +37,7 @@ figcaption {
 }
 /** Home Section */
 .bannerHome {
-  background-image: url("../assets/img/heroHome2.png");
+  background-image: url("../assets/img/Hero.webp");
 }
 h1 {
   font-family: var(--title-font);
