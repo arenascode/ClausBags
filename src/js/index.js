@@ -3,6 +3,7 @@
 //*To show cartQty in the nav
 
 const cartQtyBadge = document.querySelector(".cartQty");
+const catalogoSection = document.getElementById("catalogoSection");
 
 function showNavBarQty() {
   const cartLS = JSON.parse(localStorage.getItem("cart"));
@@ -36,7 +37,6 @@ fetch(urlProducts)
   .then((res) => res.json())
   .then((data) => {
     stock = data;
-    console.log(stock);
     showProducts();
     const addToCartBtns = document.querySelectorAll(".addToCartBtn");
     addToCartBtns.forEach((addToCartBtn) => {
@@ -159,16 +159,21 @@ export function handleItemCount(e) {
 }
 
 //**Add To Cart */
-let cart = [];
-if (localStorage.getItem("cart")) {
-  cart = JSON.parse(localStorage.getItem("cart"));
-}
-console.log(cart);
+let cart = JSON.parse(localStorage.getItem("cart"))
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [];
+console.log({cart});
+
+console.log(Boolean(localStorage.getItem("cart")));
 export function addToCart(e) {
+  // if (localStorage.getItem("cart")) {
+  //   cart = JSON.parse(localStorage.getItem("cart"));
+  // }
   const targetContainer = e.target.closest(".productContainer");
   const itemCountHTML = targetContainer.querySelector(".item-count");
   const pid = e.target.dataset.pid;
   console.log(pid);
+  console.log({ cart });
 
   const productInCartExist = cart.findIndex((product) => product.id == pid);
 
@@ -188,7 +193,7 @@ export function addToCart(e) {
   localStorage.setItem("cart", JSON.stringify(cart));
   showNavBarQty();
   console.log(cart);
-  
+
   productCounts[pid] = 1;
   const Toast = Swal.mixin({
     toast: true,
@@ -232,7 +237,9 @@ function totalCart() {
 const cartListBtn = document.getElementById("cartList");
 
 function showCart() {
-  cart = JSON.parse(localStorage.getItem("cart"));
+  cart = JSON.parse(localStorage.getItem("cart"))
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
   console.log(`testing button`);
 
   document.querySelector(".modalCartItemsContainer").innerHTML = ``;
@@ -242,21 +249,21 @@ function showCart() {
     document.querySelector(".purchaseQty").innerHTML = `
     <p>Tu carrito está vacío</p>`;
     // wtspBtn.classList.add("hidden");
-    const buyBtnContainer = document.querySelector('.buyBtnContainer')
+    const buyBtnContainer = document.querySelector(".buyBtnContainer");
     buyBtnContainer.innerHTML = `
     <p class="mb-2 lg:text-4xl">Próximo paso:</p>
-      <a href="#catalogoSection" id="goCataloge" class="btn btn-wide mt-6 bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-2 shadow-md tracking-widest text-lg lg:text-md lg:p-2.5 lg:w-max">
+      <a href="#catalogoSection" id="goCataloge" class="btn mt-6 bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-2 shadow-md tracking-widest text-lg lg:text-md lg:p-2.5 lg:w-max">
     Explora Todos los Modelos
 </a>`;
-    const goToCatalogeBtn = document.getElementById('goCataloge')
+    const goToCatalogeBtn = document.getElementById("goCataloge");
     // setTimeout(() => {
-      
+
     // }, timeout);
-    goToCatalogeBtn.removeEventListener('click', sendOrderToWtsp)
-    goToCatalogeBtn.addEventListener('click', () => {
+    goToCatalogeBtn.removeEventListener("click", sendOrderToWtsp);
+    goToCatalogeBtn.addEventListener("click", () => {
       const modalCartContainer = document.getElementById("modalCartContainer");
       modalCartContainer.classList.add("hidden");
-    })
+    });
   } else {
     const orderedCart = cart.sort((a, b) => {
       const itemA = a.nombre.toLowerCase();
@@ -285,7 +292,7 @@ function showCart() {
               cartItem.id
             }>
               <img
-                src="src/assets/icons/borrarProducto.png"
+                src="src/assets/icons/borrarProducto.webp"
                 alt="car!"
                 class="h-auto rounded-lg"
               />
@@ -304,7 +311,7 @@ function showCart() {
                   >$70.000</span
                 >
                 <span class="text-lg font-bold text-green-500 dark:text-white"
-                  >$${cartItem.precio}</span
+                  >$${cartItem.precio * cartItem.qty}</span
                 >
               </div>
               <!-- Item count buttons -->
@@ -352,15 +359,15 @@ function showCart() {
     document.querySelector(".buyBtnContainer").innerHTML = `
     <p class="mb-2 lg:text-4xl lg:mb-6">Próximo paso:</p>
       <button id="confirmCartBtn" class="btn btn-wide bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-6 shadow-md lg:text-2xl lg:p-1.5">
-    Personalizar <span class="pl-3"><img src="src/assets/icons/whatsapp.png" alt="wtspIcon" width="28px"></span>
+    Personalizar <span class="pl-3"><img src="src/assets/icons/whatsapp.webp" alt="wtspIcon" width="28px"></span>
 </button>`;
-    
+
     containerBtn.classList.remove("hidden");
     document
       .getElementById("confirmCartBtn")
       .addEventListener("click", sendOrderToWtsp);
     totalCart();
-    calcualteDiscount()
+    calcualteDiscount();
   }
 
   //*To show Modal Cart
@@ -406,14 +413,15 @@ function handleItemCartCount(e) {
 function sendOrderToWtsp() {
   console.log(cart);
   const phoneNumber = 573209389966;
-  const orderedCart = cart.sort((a, b) => {
-    const itemA = a.nombre.toLowerCase()
-    const itemB = b.nombre.toLowerCase()
+  const orderedCart = cart
+    .sort((a, b) => {
+      const itemA = a.nombre.toLowerCase();
+      const itemB = b.nombre.toLowerCase();
 
-     if (itemA < itemB) return -1;
-     if (itemA > itemB) return 1;
-     return 0; 
-  })
+      if (itemA < itemB) return -1;
+      if (itemA > itemB) return 1;
+      return 0;
+    })
     .map((p) => `Nombre: ${p.nombre.replace(/_/g, " ")} - Cantidad: ${p.qty}`)
     .join("\n");
   const message = `Hola, Quisiera Comprar estas ClausBags 🎁: 
@@ -437,16 +445,16 @@ function deleteProductInCart(e) {
   cartQty();
   showCart();
   showNavBarQty();
-  totalCart()
+  totalCart();
 }
 
 //*Show and hidde MobileMenu Modal */
 const mobileMenu = document.getElementById("navBar_mobileMenu");
-console.log(mobileMenu);
+
 const hamburguerBtn = document.getElementById("hamburger-btn");
-console.log(hamburguerBtn);
+
 const closeModalBtn = document.getElementById("closeModalBtn");
-console.log(closeModalBtn);
+
 
 function openModalMenu() {
   mobileMenu.style.display = "block";
@@ -479,30 +487,37 @@ closeModalBtn.addEventListener("click", closeModalMenu);
 //**To Open Cart From MobileMenu & PromoSection */
 
 const goToCartBtn = document.querySelector(".goToCart");
-const goToCartBtnMobile = document.querySelector('.goToCartFromMobile')
-const buyNowBtn = document.getElementById('buyNowBtn')
+const goToCartBtnMobile = document.querySelector(".goToCartFromMobile");
+const buyNowBtn = document.getElementById("buyNowBtn");
 
 function showCartFromMobileMenu() {
   console.log(`hii`);
-  showCart()
-  closeModalMenu()
+  console.log({ cart });
+
+  if (cart.length == 0) {
+    catalogoSection.scrollIntoView({ behavior: "smooth" });
+    closeModalMenu();
+    return;
+  } else {
+    showCart();
+    closeModalMenu();
+  }
 }
 
-goToCartBtn.addEventListener('click', showCartFromMobileMenu)
-goToCartBtnMobile.addEventListener('click', showCartFromMobileMenu)
+goToCartBtn.addEventListener("click", showCartFromMobileMenu);
+goToCartBtnMobile.addEventListener("click", showCartFromMobileMenu);
 buyNowBtn.addEventListener("click", showCartFromMobileMenu);
 
 //**To Calculate and show discount */
 
 function calcualteDiscount() {
   console.log(`calculating disccount`);
-  const disccountMsgContainer = document.getElementById('discountMsg')
+  const disccountMsgContainer = document.getElementById("discountMsg");
   console.log(cartQty);
   if (cartQty() >= 3) {
     console.log(cartQty);
     disccountMsgContainer.innerHTML = `<p class="text-lg sm:text-xl text-green-400 lg:text-3xl">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`;
   } else {
-    disccountMsgContainer.innerHTML = ``
+    disccountMsgContainer.innerHTML = ``;
   }
 }
-

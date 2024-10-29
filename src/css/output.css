@@ -3720,8 +3720,8 @@ details.collapse summary::-webkit-details-marker {
   height: 6.3rem;
 }
 
-.h-\[80\%\] {
-  height: 80%;
+.h-\[90\%\] {
+  height: 90%;
 }
 
 .h-\[max\] {
@@ -3982,6 +3982,10 @@ details.collapse summary::-webkit-details-marker {
   align-self: flex-end;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -4134,6 +4138,10 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(255 255 255 / 0.5);
 }
 
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -4144,10 +4152,6 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
-}
-
-.bg-opacity-40 {
-  --tw-bg-opacity: 0.4;
 }
 
 .bg-gradient-to-br {
@@ -4396,6 +4400,10 @@ details.collapse summary::-webkit-details-marker {
   font-weight: 600;
 }
 
+.font-thin {
+  font-weight: 100;
+}
+
 .leading-3 {
   line-height: .75rem;
 }
@@ -4605,7 +4613,7 @@ figcaption {
   background-image: url("../assets/img/Hero.webp");
 }
 
-h1 {
+.heroTitle {
   font-family: var(--title-font);
   letter-spacing: 5px;
 }
@@ -4663,7 +4671,7 @@ p {
 
 footer .footerContact {
   position: absolute;
-  left: 6rem;
+  left: 7rem;
   bottom: -9.5rem;
 }
 
@@ -4766,7 +4774,7 @@ footer .footerContact {
 
   footer .footerContact {
     position: absolute;
-    left: 24rem;
+    left: 28rem;
     bottom: 1rem;
   }
 }
@@ -5284,6 +5292,10 @@ footer .footerContact {
     width: 49%;
   }
 
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .lg\:w-\[83\%\] {
     width: 83%;
   }
@@ -5327,6 +5339,16 @@ footer .footerContact {
 
   .lg\:p-2\.5 {
     padding: 0.625rem;
+  }
+
+  .lg\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:pt-10 {
