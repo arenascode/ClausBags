@@ -8,5 +8,6 @@ module.exports = {
   theme: {
     extend: {},
   },
+  darkMode: "media",
   plugins: [require("daisyui"), require("flowbite/plugin")],
 };
