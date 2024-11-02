@@ -1,5 +1,4 @@
 // import { Carousel } from "flowbite";
-
 //*To show cartQty in the nav
 
 const cartQtyBadge = document.querySelector(".cartQty");
@@ -34,43 +33,43 @@ let stock = [
   {
     id: "cb1",
     nombre: "Claus Bag 1",
-    imagen: "src/assets/products/HK-06_xs.webp",
+    imagen: "/public/products/HK-06_xs.webp",
     precio: "55000",
   },
   {
     id: "cb2",
     nombre: "Claus Bag 2",
-    imagen: "src/assets/products/HK-08_xs.webp",
+    imagen: "/public/products/HK-08_xs.webp",
     precio: "55000",
   },
   {
     id: "cb3",
     nombre: "Claus Bag 3",
-    imagen: "src/assets/products/cb_3_xs.webp",
+    imagen: "/public/products/cb_3_xs.webp",
     precio: "55000",
   },
   {
     id: "cb4",
     nombre: "Claus Bag 4",
-    imagen: "src/assets/products/HK-X8_xs.webp",
+    imagen: "/public/products/HK-X8_xs.webp",
     precio: "55000",
   },
   {
     id: "cb5",
     nombre: "Claus Bag 5",
-    imagen: "src/assets/products/HK-32_xs.webp",
+    imagen: "/public/products/HK-32_xs.webp",
     precio: "55000",
   },
   {
     id: "cb6",
     nombre: "Claus Bag 6",
-    imagen: "src/assets/products/CB-LineaVerde_xs.webp",
+    imagen: "/public/products/CB-LineaVerde_xs.webp",
     precio: "55000",
   },
   {
     id: "cb7",
     nombre: "Claus Bag 7",
-    imagen: "src/assets/products/CB-LineaRoja_xs.webp",
+    imagen: "/public/products/CB-LineaRoja_xs.webp",
     precio: "55000",
   },
   {
@@ -101,6 +100,8 @@ let stock = [
 //   });
 
 function showProducts() {
+  console.log(`show products Function`);
+  
   stock.forEach((product) => {
     let productCard = document.createElement("div");
     productCard.setAttribute(
@@ -181,6 +182,7 @@ function showProducts() {
     e.addEventListener("click", handleItemCount);
   });
 }
+
 showProducts()
 //** Item Count */
 const productCounts = {};
