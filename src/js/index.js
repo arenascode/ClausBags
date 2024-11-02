@@ -31,7 +31,7 @@ class Producto {
 
 //*Create  and show the stock
 let stock = [];
-const urlProducts = "src/db/products.json";
+const urlProducts = `${window.location.origin}/src/db/products.json`;
 
 fetch(urlProducts)
   .then((res) => res.json())
@@ -162,7 +162,7 @@ export function handleItemCount(e) {
 let cart = JSON.parse(localStorage.getItem("cart"))
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
-console.log({cart});
+console.log({ cart });
 
 console.log(Boolean(localStorage.getItem("cart")));
 export function addToCart(e) {
@@ -399,15 +399,15 @@ function handleItemCartCount(e) {
     itemCountHTML.innerText = cart[productIndex].qty;
   } else if (e.target.textContent.trim() == "-") {
     console.log(cart[productIndex].qty);
-    
+
     if (cart[productIndex].qty > 1) {
       cart[productIndex].qty -= 1;
       itemCountHTML.innerText = cart[productIndex].qty;
       console.log("did enter in qty > 1?");
     } else if (cart[productIndex].qty == 1) {
-      console.log('did enter in qty == 1?');
-      
-      deleteProductInCart(e)
+      console.log("did enter in qty == 1?");
+
+      deleteProductInCart(e);
     }
   } else {
     console.log(`doesn't should pass for here`);
@@ -463,7 +463,6 @@ const mobileMenu = document.getElementById("navBar_mobileMenu");
 const hamburguerBtn = document.getElementById("hamburger-btn");
 
 const closeModalBtn = document.getElementById("closeModalBtn");
-
 
 function openModalMenu() {
   mobileMenu.style.display = "block";
