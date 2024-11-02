@@ -31,7 +31,7 @@ class Producto {
 
 //*Create  and show the stock
 let stock = [];
-const urlProducts = `${window.location.origin}/src/db/products.json`;
+const urlProducts = `products.json`;
 
 fetch(urlProducts)
   .then((res) => res.json())
