@@ -29,26 +29,75 @@ class Producto {
 }
 
 //*Create  and show the stock
-let stock = [];
+let stock = [
+  {
+    id: "cb1",
+    nombre: "Claus Bag 1",
+    imagen: "/products/HK-06_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb2",
+    nombre: "Claus Bag 2",
+    imagen: "/products/HK-08_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb3",
+    nombre: "Claus Bag 3",
+    imagen: "/products/cb_3_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb4",
+    nombre: "Claus Bag 4",
+    imagen: "/products/HK-X8_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb5",
+    nombre: "Claus Bag 5",
+    imagen: "/products/HK-32_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb6",
+    nombre: "Claus Bag 6",
+    imagen: "/products/CB-LineaVerde_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb7",
+    nombre: "Claus Bag 7",
+    imagen: "/products/CB-LineaRoja_xs.webp",
+    precio: "55000",
+  },
+  {
+    id: "cb8",
+    nombre: "Claus Bag 8",
+    imagen: "/products/HK-19_xs.webp",
+    precio: "55000",
+  },
+];
 
-const urlProducts = `products.json`;
+// const urlProducts = `products.json`;
 
-fetch(urlProducts)
-  .then((res) => res.json())
-  .then((data) => {
-    stock = data;
-    showProducts();
-    const addToCartBtns = document.querySelectorAll(".addToCartBtn");
-    addToCartBtns.forEach((addToCartBtn) => {
-      addToCartBtn.addEventListener("click", addToCart);
-    });
+// fetch(urlProducts)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     stock = data;
+//     showProducts();
+//     const addToCartBtns = document.querySelectorAll(".addToCartBtn");
+//     addToCartBtns.forEach((addToCartBtn) => {
+//       addToCartBtn.addEventListener("click", addToCart);
+//     });
 
-    const btnsItemCount = document.querySelectorAll(".btn-count");
+//     const btnsItemCount = document.querySelectorAll(".btn-count");
 
-    btnsItemCount.forEach((e) => {
-      e.addEventListener("click", handleItemCount);
-    });
-  });
+//     btnsItemCount.forEach((e) => {
+//       e.addEventListener("click", handleItemCount);
+//     });
+//   });
 
 function showProducts() {
   console.log(`show products Function`);
