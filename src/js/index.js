@@ -111,7 +111,7 @@ function showProducts() {
     productCard.innerHTML = `
       <figure class="flex align-top w-52 pb-0 rounded-lg ">
               <img
-                src=${product.imagen}
+                src=public${product.imagen}
                 alt="car!"
                 class="h-auto rounded-lg"
               />
@@ -346,7 +346,7 @@ function showCart() {
     <div data-pid=${cartItem.id} class="sm:w-40">
       <figure class="flex align-top w-28 h-28 sm:h-44  pb-0 rounded-lg m-1 sm:w-44">
               <img
-                src=${cartItem.imagen}
+                src=public${cartItem.imagen}
                 alt="car!"
                 class="h-auto rounded-lg"
               />
