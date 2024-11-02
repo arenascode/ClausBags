@@ -431,7 +431,7 @@ function sendOrderToWtsp() {
       if (itemA > itemB) return 1;
       return 0;
     })
-    .map((p) => `Nombre: ${p.nombre.replace(/_/g, " ")} - Cantidad: ${p.qty}`)
+    .map((p) => `Modelo: ${p.nombre.replace(/_/g, " ")} - Cantidad: ${p.qty}`)
     .join("\n");
   const message = `Hola, Quisiera Comprar estas ClausBags 🎁: 
 ${orderedCart}`;
