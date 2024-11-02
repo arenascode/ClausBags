@@ -355,7 +355,7 @@ function showCart() {
               cartItem.id
             }>
               <img
-                src="src/assets/icons/borrarProducto.webp"
+                src="public/icons/borrarProducto.webp"
                 alt="car!"
                 class="h-auto rounded-lg"
               />
@@ -424,7 +424,7 @@ function showCart() {
     document.querySelector(".buyBtnContainer").innerHTML = `
     <p class="mb-2 lg:text-4xl lg:mb-6 dark:text-red-400">Próximo paso:</p>
       <button id="confirmCartBtn" class="btn btn-wide bg-gradient-to-br hover:from-[#FF5959] hover:to-[#FFD700] from-[#1EB71E] to-[#FF5959] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-white rounded-full py-2 px-5 shadow-md text-lg lg:text-2xl lg:p-1.5">
-    Personalizar <span class="pl-3"><img src="src/assets/icons/whatsapp.webp" alt="wtspIcon" width="28px"></span>
+    Personalizar <span class="pl-2"><img src="public/icons/whatsapp.webp" alt="wtspIcon" width="28px"></span>
 </button>`;
 
     containerBtn.classList.remove("hidden");
