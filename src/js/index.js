@@ -228,6 +228,7 @@ let cart = JSON.parse(localStorage.getItem("cart"))
 console.log({ cart });
 
 console.log(Boolean(localStorage.getItem("cart")));
+
 export function addToCart(e) {
   // if (localStorage.getItem("cart")) {
   //   cart = JSON.parse(localStorage.getItem("cart"));
@@ -235,8 +236,6 @@ export function addToCart(e) {
   const targetContainer = e.target.closest(".productContainer");
   const itemCountHTML = targetContainer.querySelector(".item-count");
   const pid = e.target.dataset.pid;
-  console.log(pid);
-  console.log({ cart });
 
   const productInCartExist = cart.findIndex((product) => product.id == pid);
 
@@ -255,7 +254,6 @@ export function addToCart(e) {
   }
   localStorage.setItem("cart", JSON.stringify(cart));
   showNavBarQty();
-  console.log(cart);
 
   productCounts[pid] = 1;
   const Toast = Swal.mixin({
@@ -277,7 +275,7 @@ export function addToCart(e) {
     )} ClausBag al carrito `,
   });
   itemCountHTML.innerText = productCounts[pid];
-  console.log(productCounts);
+  fbq('track', 'AddToCart', {model: pid ,qty:productCounts[pid]})
 }
 
 //**Calculate Products Quantity */
@@ -294,6 +292,7 @@ function totalCart() {
   }, 0);
   console.log(totalCart);
   totalCartContainer.innerHTML = `Total: <span class='bold dark:text-green-400'>$${totalCart}</span>`;
+  return totalCart
 }
 
 //**Show Cart */
@@ -502,7 +501,9 @@ ${orderedCart}`;
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
   )}`;
-
+  const totalAmount = totalCart()
+  const cartQuantity = cartQty()
+  fbq("track", "Purchase", { amount: totalAmount, cartQty: cartQuantity  });
   // Open WhatsApp link in a new tab.
   window.open(whatsappLink, "_blank");
 }
