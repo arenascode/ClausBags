@@ -58,19 +58,19 @@ let stock = [
     id: "cb5",
     nombre: "Claus Bag 5",
     imagen: "public/products/HK-32_xs.webp",
-    precio: "55000",
+    precio: "60000",
   },
   {
     id: "cb6",
     nombre: "Claus Bag 6",
     imagen: "public/products/CB-LineaVerde_xs.webp",
-    precio: "55000",
+    precio: "60000",
   },
   {
     id: "cb7",
     nombre: "Claus Bag 7",
     imagen: "public/products/CB-LineaRoja_xs.webp",
-    precio: "55000",
+    precio: "60000",
   },
   {
     id: "cb8",
@@ -345,7 +345,7 @@ function showCart() {
     <div data-pid=${cartItem.id} class="sm:w-40">
       <figure class="flex align-top w-28 h-28 sm:h-44  pb-0 rounded-lg m-1 sm:w-44">
               <img
-                src=public${cartItem.imagen}
+                src=${cartItem.imagen}
                 alt="car!"
                 class="h-auto rounded-lg"
               />
