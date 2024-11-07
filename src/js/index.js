@@ -483,7 +483,7 @@ function handleItemCartCount(e) {
 //**Send Order To Wtsp */
 function sendOrderToWtsp() {
   console.log(cart);
-  const phoneNumber = 573209389966;
+  const phoneNumber = 573202806790;
   const orderedCart = cart
     .sort((a, b) => {
       const itemA = a.nombre.toLowerCase();
