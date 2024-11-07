@@ -592,3 +592,17 @@ function calcualteDiscount() {
     disccountMsgContainer.innerHTML = ``;
   }
 }
+
+//* Show Wtsp Icon *//
+ const handleWtspIcon = () => {
+   const scrollPosition = window.scrollY;
+   const wtspBtnContainer = document.querySelector(".wtspIconContainer");
+
+   if (scrollPosition >= 1000) {
+     wtspBtnContainer.classList.add("show");
+   } else {
+     wtspBtnContainer.classList.remove("show");
+   }
+ };
+
+ window.addEventListener("scroll", handleWtspIcon);

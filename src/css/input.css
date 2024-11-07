@@ -143,7 +143,21 @@ footer .footerContact {
   flex-direction: column;
   gap: 50px;
 }
+/** WhatsApp Icon **/
+.wtspIconContainer {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0.5rem;
+  transform: translateY(-40%);
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
 
+.animated-icon.show {
+  opacity: 1;
+  transform: translate(-20%, -18px);
+}
 /* Small (sm) */
 @media (min-width: 640px) and (max-width: 767px) {
   .mobileMenu_content {
