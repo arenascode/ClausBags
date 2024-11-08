@@ -4652,6 +4652,22 @@ p {
 
 /** Carousel Section */
 
+.carouselContainer {
+  background-color: #e0e0e0;
+  background-image: url("/src/assets/products/CBPromo_xs.webp");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: blur(20px)
+}
+
+.imgCarousel.loaded {
+  display: block;
+}
+
+/* .imgCarousel {
+  display: none;
+} */
+
 /** Products Details Section */
 
 .productDetailsTitle h2 {

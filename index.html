@@ -165,7 +165,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
         >
           <!-- Carousel wrapper -->
           <div
-            class="relative h-60 overflow-hidden rounded-lg sm:h-96 md:h-96 lg:h-[450px] xl:h-[500px]"
+            class="relative h-60 overflow-hidden rounded-lg sm:h-96 md:h-96 lg:h-[450px] xl:h-[500px] carouselContainer"
           >
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -174,6 +174,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
                 <source
                   media="(max-width: 480px)"
                   srcset="src/assets/products/CBPromo_xs.webp"
+                  rel="preload"
                 />
                 <!-- Tablet -->
                 <source
@@ -189,7 +190,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
                 <img
                   src="src/assets/products/CBPromo-xl.webp"
                   alt="Responsive image"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel" rel="preload"
                 />
               </picture>
             </div>
