@@ -80,27 +80,7 @@ let stock = [
   },
 ];
 
-// const urlProducts = `products.json`;
-
-// fetch(urlProducts)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     stock = data;
-//     showProducts();
-//     const addToCartBtns = document.querySelectorAll(".addToCartBtn");
-//     addToCartBtns.forEach((addToCartBtn) => {
-//       addToCartBtn.addEventListener("click", addToCart);
-//     });
-
-//     const btnsItemCount = document.querySelectorAll(".btn-count");
-
-//     btnsItemCount.forEach((e) => {
-//       e.addEventListener("click", handleItemCount);
-//     });
-//   });
-
 function showProducts() {
-  console.log(`show products Function`);
   
   stock.forEach((product) => {
     let productCard = document.createElement("div");
@@ -191,7 +171,6 @@ const productCounts = {};
 export function handleItemCount(e) {
   const targetContainer = e.target.closest(".productContainer");
   const pid = targetContainer.querySelector("[data-pid]").dataset.pid;
-  console.log(pid);
   const itemCountHTML = targetContainer.querySelector(".item-count");
 
   if (!targetContainer) {
@@ -205,7 +184,6 @@ export function handleItemCount(e) {
   //* Initialize count if not exists
   if (!productCounts[pid]) {
     productCounts[pid] = 1;
-    console.log(productCounts);
   }
 
   if (e.target.textContent.trim() == "+") {
@@ -225,21 +203,14 @@ export function handleItemCount(e) {
 let cart = JSON.parse(localStorage.getItem("cart"))
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
-console.log({ cart });
-
-console.log(Boolean(localStorage.getItem("cart")));
 
 export function addToCart(e) {
-  // if (localStorage.getItem("cart")) {
-  //   cart = JSON.parse(localStorage.getItem("cart"));
-  // }
   const targetContainer = e.target.closest(".productContainer");
   const itemCountHTML = targetContainer.querySelector(".item-count");
   const pid = e.target.dataset.pid;
 
   const productInCartExist = cart.findIndex((product) => product.id == pid);
 
-  console.log(productInCartExist);
   if (productInCartExist == -1) {
     let chosenProduct = new Producto(
       e.target.dataset.pid,
@@ -302,7 +273,6 @@ function showCart() {
   cart = JSON.parse(localStorage.getItem("cart"))
     ? JSON.parse(localStorage.getItem("cart"))
     : [];
-  console.log(`testing button`);
 
   document.querySelector(".modalCartItemsContainer").innerHTML = ``;
   const containerBtn = document.querySelector(".buyBtnContainer");
@@ -318,9 +288,7 @@ function showCart() {
     Explora Todos los Modelos
 </a>`;
     const goToCatalogeBtn = document.getElementById("goCataloge");
-    // setTimeout(() => {
-
-    // }, timeout);
+    
     goToCatalogeBtn.removeEventListener("click", sendOrderToWtsp);
     goToCatalogeBtn.addEventListener("click", () => {
       const modalCartContainer = document.getElementById("modalCartContainer");
@@ -368,10 +336,7 @@ function showCart() {
                 ${cartItem.nombre.split("_").join(" ")}
               </h5>
               <div class="priceContainer flex flex-col">
-                <span
-                  class="text-sm font-medium text-gray-300 dark:text-white line-through italic"
-                  >$70.000</span
-                >
+                
                 <span class="text-lg font-bold text-green-500 dark:text-success"
                   >$${cartItem.precio * cartItem.qty}</span
                 >
@@ -406,7 +371,6 @@ function showCart() {
         .querySelector(".modalCartItemsContainer")
         .appendChild(cardProduct);
       const cartCountBtns = document.querySelectorAll(".btn-cartCount");
-      // console.log(cartCountBtns);
       cartCountBtns.forEach((btn) =>
         btn.addEventListener("click", handleItemCartCount)
       );
@@ -437,7 +401,6 @@ function showCart() {
   //*To show Modal Cart
   const modalCartContainer = document.getElementById("modalCartContainer");
   modalCartContainer.classList.remove("hidden");
-  // modalCartContainer.classList.add('absolute')
 
   //*To Close Modal Cart
   const closeModalCartBtn = document.getElementById("closeModalCart");
@@ -453,22 +416,17 @@ function handleItemCartCount(e) {
   const targetContainer = e.target.closest(".productContainer");
   const itemCountHTML = targetContainer.querySelector(".item-count");
   const pid = targetContainer.querySelector("[data-pid]").dataset.pid;
-  console.log(pid);
   let productIndex = cart.findIndex((product) => product.id == pid);
 
   if (e.target.textContent.trim() == "+") {
     cart[productIndex].qty += 1;
     itemCountHTML.innerText = cart[productIndex].qty;
   } else if (e.target.textContent.trim() == "-") {
-    console.log(cart[productIndex].qty);
 
     if (cart[productIndex].qty > 1) {
       cart[productIndex].qty -= 1;
       itemCountHTML.innerText = cart[productIndex].qty;
-      console.log("did enter in qty > 1?");
     } else if (cart[productIndex].qty == 1) {
-      console.log("did enter in qty == 1?");
-
       deleteProductInCart(e);
     }
   } else {
@@ -482,7 +440,6 @@ function handleItemCartCount(e) {
 
 //**Send Order To Wtsp */
 function sendOrderToWtsp() {
-  console.log(cart);
   const phoneNumber = 573202806790;
   const orderedCart = cart
     .sort((a, b) => {
@@ -493,10 +450,11 @@ function sendOrderToWtsp() {
       if (itemA > itemB) return 1;
       return 0;
     })
-    .map((p) => `Modelo: ${p.nombre.replace(/_/g, " ")} - Cantidad: ${p.qty}`)
+    .map((p) => `Modelo: *${p.nombre.replace(/_/g, " ")}.* Precio: *${p.precio}* x Cantidad: *${p.qty}* = *${p.precio * p.qty}*`)
     .join("\n");
   const message = `Hola, Quisiera Comprar estas ClausBags 🎁: 
-${orderedCart}`;
+${orderedCart}
+*Total Pedido = ${totalCart()}*`;
   // Construct the WhatsApp link.
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
@@ -510,10 +468,7 @@ ${orderedCart}`;
 //*Delete Product in cart */
 function deleteProductInCart(e) {
   const pid = e.target.dataset.pid;
-  console.log(pid);
-  console.log(cart);
   const newCart = cart.filter((p) => p.id != pid);
-  console.log(newCart);
   localStorage.setItem("cart", JSON.stringify(newCart));
   cartQty();
   showCart();
@@ -536,7 +491,6 @@ function openModalMenu() {
 }
 
 function closeModalMenu() {
-  console.log(`hiii`);
   mobileMenu.style.opacity = 0;
   setTimeout(() => {
     mobileMenu.style.display = "none";
@@ -563,8 +517,6 @@ const goToCartBtnMobile = document.querySelector(".goToCartFromMobile");
 const buyNowBtn = document.getElementById("buyNowBtn");
 
 function showCartFromMobileMenu() {
-  console.log(`hii`);
-  console.log({ cart });
 
   if (cart.length == 0) {
     catalogoSection.scrollIntoView({ behavior: "smooth" });
@@ -583,9 +535,7 @@ buyNowBtn.addEventListener("click", showCartFromMobileMenu);
 //**To Calculate and show discount */
 
 function calcualteDiscount() {
-  console.log(`calculating disccount`);
   const disccountMsgContainer = document.getElementById("discountMsg");
-  console.log(cartQty);
   if (cartQty() >= 3) {
     disccountMsgContainer.innerHTML = `<p class="text-xl sm:text-xl text-green-400 lg:text-3xl">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`;
   } else {

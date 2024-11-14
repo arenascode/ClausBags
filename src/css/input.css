@@ -9,6 +9,10 @@
   --pharagrap-font: "Patrick Hand", cursive;
   --color-separator: #bf2813;
 }
+
+html {
+  scroll-padding-top: 101px;
+}
 body {
   background-color: white;
 }
