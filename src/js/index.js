@@ -81,6 +81,7 @@ let stock = [
 ];
 
 function showProducts() {
+  console.log(`showing products`);
   
   stock.forEach((product) => {
     let productCard = document.createElement("div");
@@ -163,7 +164,7 @@ function showProducts() {
   });
 }
 
-showProducts()
+// showProducts()
 //** Item Count */
 const productCounts = {};
 // let itemCount = 1;
@@ -555,4 +556,22 @@ function calcualteDiscount() {
    }
  };
 
- window.addEventListener("scroll", handleWtspIcon);
+window.addEventListener("scroll", handleWtspIcon);
+ 
+// Configurar el IntersectionObserver
+const observerOptions = {
+  root: null, // viewport
+  rootMargin: "0px",
+  threshold: 0.05, // ejecuta cuando el 10% de la sección es visible
+};
+
+const catalogoObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      showProducts();
+      observer.unobserve(entry.target); // Detener observación después de renderizar
+    }
+  });
+}, observerOptions);
+
+catalogoObserver.observe(catalogoSection);
