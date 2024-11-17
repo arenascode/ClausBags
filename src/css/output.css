@@ -3567,6 +3567,11 @@ details.collapse summary::-webkit-details-marker {
   margin: 0.25rem;
 }
 
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -3706,6 +3711,10 @@ details.collapse summary::-webkit-details-marker {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .h-9 {
@@ -4661,7 +4670,7 @@ p {
   background-image: url("/src/assets/products/CBPromo_xs.webp");
   background-position: center;
   background-size: cover;
-  background-blend-mode: blur(20px)
+  background-blend-mode: blur(20px);
 }
 
 .imgCarousel.loaded {
@@ -4676,6 +4685,21 @@ p {
 
 .productDetailsTitle h2 {
   font-family: var(--title-font);
+}
+
+/** Reviews Carousel */
+
+#clientReviews {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.carouselReviewsContainer {
+  background-image: none;
+  margin-top: 1rem;
 }
 
 /** Footer Section */
@@ -4791,6 +4815,10 @@ footer .footerContact {
 /* Large (lg) */
 
 @media (min-width: 1024px) and (max-width: 1279px) {
+  #clientReviews {
+    margin-top: 2.5rem;
+  }
+
   footer {
     /* background-image: url('../assets/img/footerImg.png'); */
     /* height: 340px; */
@@ -5359,6 +5387,10 @@ footer .footerContact {
 
   .lg\:w-\[49\%\] {
     width: 49%;
+  }
+
+  .lg\:w-\[500px\] {
+    width: 500px;
   }
 
   .lg\:w-\[70\%\] {

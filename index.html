@@ -21,22 +21,41 @@
     />
     <title>Claus Bags</title>
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '450801148029321');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "450801148029321");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body class="bg-base-100">
     <nav
@@ -138,7 +157,10 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
         </div>
       </div>
       <section id="IntroSection">
-        <div class="titleIntro mt-7 flex flex-col items-center dark:text-red-400" id="titleIntroSection">
+        <div
+          class="titleIntro mt-7 flex flex-col items-center dark:text-red-400"
+          id="titleIntroSection"
+        >
           <h2
             class="card-title text-center text-4xl justify-center font-thin tracking-widest leading-tight lg:text-5xl"
           >
@@ -190,7 +212,8 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
                 <img
                   src="src/assets/products/CBPromo-xl.webp"
                   alt="Responsive image"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel" rel="preload"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel"
+                  rel="preload"
                 />
               </picture>
             </div>
@@ -210,7 +233,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
                 <!-- Desktop -->
                 <source
                   media="(min-width: 769px)"
-                  srcset="src/assets/products/CBPromo-xl.webp"
+                  srcset="src/assets/products/CB1_xs.webp"
                 />
                 <!-- Fallback -->
                 <img
@@ -398,7 +421,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
         id="ProductDetailsSection"
         class="flex flex-col items-center mt-7 p-3 lg:px-20"
       >
-        <div class="productDetailsTitle flex flex-col items-center lg:mb-7 ">
+        <div class="productDetailsTitle flex flex-col items-center lg:mb-7">
           <h2
             class="text-center text-4xl px-2 leading-tight tracking-widest lg:text-5xl dark:text-red-400"
           >
@@ -439,7 +462,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
                 <br />
               </h4>
               <p
-                class="mb-3 text-gray-700 dark:text-[#D1D6E0] sm:text-xl sm:mt-5 lg:text-2xl lg:tracking-wider lg:mt-10 xl:text-3xl xl:w-[90%] "
+                class="mb-3 text-gray-700 dark:text-[#D1D6E0] sm:text-xl sm:mt-5 lg:text-2xl lg:tracking-wider lg:mt-10 xl:text-3xl xl:w-[90%]"
               >
                 Imagina el brillo en los ojos de tus seres queridos al recibir
                 un regalo en bolsa de Papa Noel con su nombre.
@@ -455,7 +478,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
               </a>
             </div>
           </div>
-          
+
           <!-- Card 2 -->
           <div
             class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-5 sm:flex sm:flex-row-reverse sm:w-screen sm:p-1"
@@ -565,6 +588,129 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
           </div>
         </div>
       </section>
+      <section id="clientReviews">
+        <div class="productDetailsTitle flex flex-col items-center lg:mb-7">
+          <h2
+            class="text-center text-4xl px-2 leading-tight tracking-widest lg:text-5xl dark:text-red-400"
+          >
+            Recuerdos y sonrisas: esto dicen nuestros clientes 🎄💕
+          </h2>
+        </div>
+        <div
+          id="default-carousel"
+          class="relative w-full lg:w-[500px]"
+          data-carousel="slide"
+        >
+          <!-- Carousel wrapper -->
+          <div
+            class="relative h-80 overflow-hidden rounded-lg sm:h-96 md:h-96 lg:h-[450px] xl:h-[500px]  carouselReviewsContainer mx-7"
+          >
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="src/assets/img/review1.webp" alt="review1" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="src/assets/img/review2.webp" alt="review2" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="src/assets/img/review3.webp" alt="review3" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="src/assets/img/review1.webp" alt="review1" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel">
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="src/assets/img/review2.webp" alt="review2" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 imgCarousel">
+            </div>
+            <!-- Item 6 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="src/assets/img/review3.webp" alt="review3" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            </div>
+          </div>
+          <!-- Slider indicators -->
+          <div
+            class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2"
+          >
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="true"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+          </div>
+          <!-- Slider controls -->
+          <button
+            type="button"
+            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 1 1 5l4 4"
+                />
+              </svg>
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+      </section>
       <section id="catalogoSection" class="pt-8 lg:px-12">
         <div class="catalogoIntro flex flex-col justify-center">
           <div class="catalogoTitleIntro flex flex-col items-center">
@@ -609,17 +755,22 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
             class="promoBody flex flex-col justify-center align-middle px-2 pt-4 lg:pt-8"
           >
             <p class="lg:text-4xl dark:text-[#D1D6E0]">
-  Con la compra de tres o más hermosas bolsas navideñas, te hacemos un 
-  <span class="text-4xl text-success">10% De Descuento</span>.
-</p>
-<br />
-<p class="font-bold lg:text-4xl dark:text-[#D1D6E0]">
-  ¡
-  <span class="text-4xl text-success">Ahorra más</span> con el trío mágico!
-</p>
-<p class="font-bold lg:text-3xl lg:pt-2 lg:mb-7 dark:text-[#D1D6E0]">
-  Una oportunidad única para compartir la magia de la Navidad en familia.
-</p>
+              Con la compra de tres o más hermosas bolsas navideñas, te hacemos
+              un
+              <span class="text-4xl text-success">10% De Descuento</span>.
+            </p>
+            <br />
+            <p class="font-bold lg:text-4xl dark:text-[#D1D6E0]">
+              ¡
+              <span class="text-4xl text-success">Ahorra más</span> con el trío
+              mágico!
+            </p>
+            <p
+              class="font-bold lg:text-3xl lg:pt-2 lg:mb-7 dark:text-[#D1D6E0]"
+            >
+              Una oportunidad única para compartir la magia de la Navidad en
+              familia.
+            </p>
             <br />
             <picture class="flex justify-center">
               <!-- Mobile -->
@@ -645,10 +796,14 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
               />
             </picture>
             <br />
-            <p class="font-bold lg:text-4xl lg:pt-5 lg:mb-7 dark:text-[#D1D6E0]">
+            <p
+              class="font-bold lg:text-4xl lg:pt-5 lg:mb-7 dark:text-[#D1D6E0]"
+            >
               La forma perfecta de regalar y decorar con encanto esta temporada.
             </p>
-            <p class="font-bold lg:text-4xl lg:pt-2 lg:mb-7 dark:text-[#D1D6E0]">
+            <p
+              class="font-bold lg:text-4xl lg:pt-2 lg:mb-7 dark:text-[#D1D6E0]"
+            >
               ¡No dejes que se escape la magia!
             </p>
             <div class="btnCTA flex justify-center sm:mt-5">
@@ -666,7 +821,9 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
         id="purchaseProcess"
         class="w-screen flex flex-col items-center lg:pt-10"
       >
-        <h4 class="text-center mt-2 lg:text-5xl dark:text-red-400">El Proceso Es Simple</h4>
+        <h4 class="text-center mt-2 lg:text-5xl dark:text-red-400">
+          El Proceso Es Simple
+        </h4>
         <div
           class="iconsContainer p-2 pt-6 flex sm:gap-6 sm:mt-8 sm:p-1 lg:pt-11"
         >
@@ -750,7 +907,10 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
           class="md:h-[280px] md:w-full lg:h-[350px] lg:w-full"
         />
       </picture>
-      <div id="footerContact" class="footerContact flex flex-col items-center justify-center">
+      <div
+        id="footerContact"
+        class="footerContact flex flex-col items-center justify-center"
+      >
         <div class="footerIcon flex gap-4 pb-2 lg:gap-8 self-center">
           <a
             href="https://www.instagram.com/clausdeliverybags/"
@@ -777,14 +937,14 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
       </div>
     </footer>
     <div class="wtspIconContainer animated-icon">
-        <a
-          href="https://wa.link/d7b4jn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="src/assets/icons/whatsapp.webp" alt="wtspIcon" width="50" />
-        </a>
-      </div>
+      <a
+        href="https://wa.link/d7b4jn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="src/assets/icons/whatsapp.webp" alt="wtspIcon" width="50" />
+      </a>
+    </div>
     <!-- Modal Cart Container -->
     <div
       id="modalCartContainer"
@@ -842,7 +1002,7 @@ src="https://www.facebook.com/tr?id=450801148029321&ev=PageView&noscript=1"
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    <script src="./src/js/index.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./src/js/index.js" type="module" defer></script>
   </body>
 </html>

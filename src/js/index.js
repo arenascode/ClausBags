@@ -82,7 +82,7 @@ let stock = [
 
 function showProducts() {
   console.log(`showing products`);
-  
+
   stock.forEach((product) => {
     let productCard = document.createElement("div");
     productCard.setAttribute(
@@ -247,7 +247,7 @@ export function addToCart(e) {
     )} ClausBag al carrito `,
   });
   itemCountHTML.innerText = productCounts[pid];
-  fbq('track', 'AddToCart', {model: pid ,qty:productCounts[pid]})
+  fbq("track", "AddToCart", { model: pid, qty: productCounts[pid] });
 }
 
 //**Calculate Products Quantity */
@@ -264,7 +264,7 @@ function totalCart() {
   }, 0);
   console.log(totalCart);
   totalCartContainer.innerHTML = `Total: <span class='bold dark:text-green-400'>$${totalCart}</span>`;
-  return totalCart
+  return totalCart;
 }
 
 //**Show Cart */
@@ -289,7 +289,7 @@ function showCart() {
     Explora Todos los Modelos
 </a>`;
     const goToCatalogeBtn = document.getElementById("goCataloge");
-    
+
     goToCatalogeBtn.removeEventListener("click", sendOrderToWtsp);
     goToCatalogeBtn.addEventListener("click", () => {
       const modalCartContainer = document.getElementById("modalCartContainer");
@@ -423,7 +423,6 @@ function handleItemCartCount(e) {
     cart[productIndex].qty += 1;
     itemCountHTML.innerText = cart[productIndex].qty;
   } else if (e.target.textContent.trim() == "-") {
-
     if (cart[productIndex].qty > 1) {
       cart[productIndex].qty -= 1;
       itemCountHTML.innerText = cart[productIndex].qty;
@@ -451,7 +450,12 @@ function sendOrderToWtsp() {
       if (itemA > itemB) return 1;
       return 0;
     })
-    .map((p) => `Modelo: *${p.nombre.replace(/_/g, " ")}.* Precio: *${p.precio}* x Cantidad: *${p.qty}* = *${p.precio * p.qty}*`)
+    .map(
+      (p) =>
+        `Modelo: *${p.nombre.replace(/_/g, " ")}.* Precio: *${
+          p.precio
+        }* x Cantidad: *${p.qty}* = *${p.precio * p.qty}*`
+    )
     .join("\n");
   const message = `Hola, Quisiera Comprar estas ClausBags 🎁: 
 ${orderedCart}
@@ -460,9 +464,9 @@ ${orderedCart}
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
   )}`;
-  const totalAmount = totalCart()
-  const cartQuantity = cartQty()
-  fbq("track", "Purchase", { amount: totalAmount, cartQty: cartQuantity  });
+  const totalAmount = totalCart();
+  const cartQuantity = cartQty();
+  fbq("track", "Purchase", { amount: totalAmount, cartQty: cartQuantity });
   // Open WhatsApp link in a new tab.
   window.open(whatsappLink, "_blank");
 }
@@ -518,7 +522,6 @@ const goToCartBtnMobile = document.querySelector(".goToCartFromMobile");
 const buyNowBtn = document.getElementById("buyNowBtn");
 
 function showCartFromMobileMenu() {
-
   if (cart.length == 0) {
     catalogoSection.scrollIntoView({ behavior: "smooth" });
     closeModalMenu();
@@ -545,19 +548,19 @@ function calcualteDiscount() {
 }
 
 //* Show Wtsp Icon *//
- const handleWtspIcon = () => {
-   const scrollPosition = window.scrollY;
-   const wtspBtnContainer = document.querySelector(".wtspIconContainer");
+const handleWtspIcon = () => {
+  const scrollPosition = window.scrollY;
+  const wtspBtnContainer = document.querySelector(".wtspIconContainer");
 
-   if (scrollPosition >= 1000) {
-     wtspBtnContainer.classList.add("show");
-   } else {
-     wtspBtnContainer.classList.remove("show");
-   }
- };
+  if (scrollPosition >= 1000) {
+    wtspBtnContainer.classList.add("show");
+  } else {
+    wtspBtnContainer.classList.remove("show");
+  }
+};
 
 window.addEventListener("scroll", handleWtspIcon);
- 
+
 // Configurar el IntersectionObserver
 const observerOptions = {
   root: null, // viewport
@@ -575,3 +578,4 @@ const catalogoObserver = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 catalogoObserver.observe(catalogoSection);
+
