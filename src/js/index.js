@@ -20,11 +20,12 @@ showNavBarQty();
 //*Construct the Product to show in the cart.
 
 class Producto {
-  constructor(id, nombre, imagen, precio) {
+  constructor(id, nombre, imagen, precio, precio_viejo) {
     (this.id = id),
       (this.nombre = nombre),
       (this.imagen = imagen),
       (this.precio = precio);
+    this.precio_viejo = precio_viejo;
   }
 }
 
@@ -34,57 +35,57 @@ let stock = [
     id: "cb1",
     nombre: "Claus Bag 1",
     imagen: "public/products/HK-06_xs.webp",
-    precio: "55,000",
-    precio_viejo: "70,000"
+    precio: "55000",
+    precio_viejo: "70,000",
   },
   {
     id: "cb2",
     nombre: "Claus Bag 2",
     imagen: "public/products/HK-08_xs.webp",
-    precio: "55,000",
-    precio_viejo: "70,000"
+    precio: "55000",
+    precio_viejo: "70,000",
   },
   {
     id: "cb3",
     nombre: "Claus Bag 3",
     imagen: "public/products/cb_3_xs.webp",
-    precio: "50,000",
-    precio_viejo: "65,000"
+    precio: "50000",
+    precio_viejo: "65,000",
   },
   {
     id: "cb4",
     nombre: "Claus Bag 4",
     imagen: "public/products/HK-X8_xs.webp",
-    precio: "50,000",
-    precio_viejo: "65,000"
+    precio: "50000",
+    precio_viejo: "65,000",
   },
   {
     id: "cb5",
     nombre: "Claus Bag 5",
     imagen: "public/products/HK-32_xs.webp",
-    precio: "60,000",
-    precio_viejo: "75,000"
+    precio: "60000",
+    precio_viejo: "75,000",
   },
   {
     id: "cb6",
     nombre: "Claus Bag 6",
     imagen: "public/products/CB-LineaVerde_xs.webp",
-    precio: "60,000",
-    precio_viejo: "75,000"
+    precio: "60000",
+    precio_viejo: "75,000",
   },
   {
     id: "cb7",
     nombre: "Claus Bag 7",
     imagen: "public/products/CB-LineaRoja_xs.webp",
-    precio: "60,000",
-    precio_viejo: "75,000"
+    precio: "60000",
+    precio_viejo: "75,000",
   },
   {
     id: "cb8",
     nombre: "Claus Bag 8",
     imagen: "public/products/HK-19_xs.webp",
-    precio: "50,000",
-    precio_viejo: "65,000"
+    precio: "50000",
+    precio_viejo: "65,000",
   },
 ];
 
@@ -93,6 +94,9 @@ function showProducts() {
 
   stock.forEach((product) => {
     let productCard = document.createElement("div");
+    const formattedPrice = `$${product.precio
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     productCard.setAttribute(
       "class",
       "productContainer w-full shadow-xl flex flex-row p-1 sm:p-4 dark:bg-[#1E3D32] bg-white rounded-lg border border-gray-300  md:w-[48%] lg:w-[49%]"
@@ -115,7 +119,7 @@ function showProducts() {
                   >$${product.precio_viejo}</span
                 >
                 <span class="text-xl font-bold text-green-500 dark:text-success"
-                  >$${product.precio}</span
+                  >${formattedPrice}</span
                 >
               </div>
               <!-- Item count buttons -->
@@ -266,12 +270,20 @@ function cartQty() {
 //**Calculate Total Cart */
 function totalCart() {
   const totalCartContainer = document.querySelector(".totalCart");
+  
   const totalCart = cart.reduce((total, item) => {
+    console.log({precio: item.precio});
+    
     total += parseInt(item.qty) * parseInt(item.precio);
+    console.log({ total });
+    
     return total;
   }, 0);
+  const formatedTotalCart = `${totalCart
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   console.log(totalCart);
-  totalCartContainer.innerHTML = `Total: <span class='bold dark:text-green-400'>$${totalCart}</span>`;
+  totalCartContainer.innerHTML = `Total: <span class='bold dark:text-green-400'>$${formatedTotalCart}</span>`;
   return totalCart;
 }
 
@@ -314,10 +326,15 @@ function showCart() {
     });
     orderedCart.forEach((cartItem) => {
       const cardProduct = document.createElement("div");
+      const formattedTotalItem = `${
+        (cartItem.precio *
+        cartItem.qty).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      }`;
       cardProduct.setAttribute(
         "class",
         "productContainer w-full shadow-xl flex flex-row p-1 sm:p-2 bg-white rounded-lg border border-gray-300 gap-3 lg:w-[41%] dark:bg-[#1E3D32]"
       );
+      
       cardProduct.innerHTML = `
     <div data-pid=${cartItem.id} class="sm:w-40">
       <figure class="flex align-top w-28 h-28 sm:h-44  pb-0 rounded-lg m-1 sm:w-44">
@@ -347,7 +364,7 @@ function showCart() {
               <div class="priceContainer flex flex-col">
                 
                 <span class="text-lg font-bold text-green-500 dark:text-success"
-                  >$${cartItem.precio * cartItem.qty}</span
+                  >$${formattedTotalItem}</span
                 >
               </div>
               <!-- Item count buttons -->
@@ -586,4 +603,3 @@ const catalogoObserver = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 catalogoObserver.observe(catalogoSection);
-
