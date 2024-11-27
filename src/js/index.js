@@ -1,4 +1,3 @@
-// import { Carousel } from "flowbite";
 //*To show cartQty in the nav
 
 const cartQtyBadge = document.querySelector(".cartQty");
