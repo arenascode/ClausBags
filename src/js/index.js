@@ -34,14 +34,14 @@ let stock = [
   {
     id: "cb1",
     nombre: "Claus Bag 1",
-    imagen: "public/products/HK-06_xs.webp",
+    imagen: "public/products/cbRed_xs.webp",
     precio: "55000",
     precio_viejo: "70,000",
   },
   {
     id: "cb2",
     nombre: "Claus Bag 2",
-    imagen: "public/products/HK-08_xs.webp",
+    imagen: "public/products/cbGreen_xs.webp",
     precio: "55000",
     precio_viejo: "70,000",
   },
