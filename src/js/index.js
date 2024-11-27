@@ -34,49 +34,57 @@ let stock = [
     id: "cb1",
     nombre: "Claus Bag 1",
     imagen: "public/products/HK-06_xs.webp",
-    precio: "55000",
+    precio: "55,000",
+    precio_viejo: "70,000"
   },
   {
     id: "cb2",
     nombre: "Claus Bag 2",
     imagen: "public/products/HK-08_xs.webp",
-    precio: "55000",
+    precio: "55,000",
+    precio_viejo: "70,000"
   },
   {
     id: "cb3",
     nombre: "Claus Bag 3",
     imagen: "public/products/cb_3_xs.webp",
-    precio: "55000",
+    precio: "50,000",
+    precio_viejo: "65,000"
   },
   {
     id: "cb4",
     nombre: "Claus Bag 4",
     imagen: "public/products/HK-X8_xs.webp",
-    precio: "55000",
+    precio: "50,000",
+    precio_viejo: "65,000"
   },
   {
     id: "cb5",
     nombre: "Claus Bag 5",
     imagen: "public/products/HK-32_xs.webp",
-    precio: "60000",
+    precio: "60,000",
+    precio_viejo: "75,000"
   },
   {
     id: "cb6",
     nombre: "Claus Bag 6",
     imagen: "public/products/CB-LineaVerde_xs.webp",
-    precio: "60000",
+    precio: "60,000",
+    precio_viejo: "75,000"
   },
   {
     id: "cb7",
     nombre: "Claus Bag 7",
     imagen: "public/products/CB-LineaRoja_xs.webp",
-    precio: "60000",
+    precio: "60,000",
+    precio_viejo: "75,000"
   },
   {
     id: "cb8",
     nombre: "Claus Bag 8",
     imagen: "public/products/HK-19_xs.webp",
-    precio: "55000",
+    precio: "50,000",
+    precio_viejo: "65,000"
   },
 ];
 
@@ -104,7 +112,7 @@ function showProducts() {
               <div class="priceContainer flex flex-col">
                 <span
                   class="text-lg font-medium text-gray-300 dark:text-white line-through italic"
-                  >$70.000</span
+                  >$${product.precio_viejo}</span
                 >
                 <span class="text-xl font-bold text-green-500 dark:text-success"
                   >$${product.precio}</span
@@ -541,7 +549,7 @@ buyNowBtn.addEventListener("click", showCartFromMobileMenu);
 function calcualteDiscount() {
   const disccountMsgContainer = document.getElementById("discountMsg");
   if (cartQty() >= 3) {
-    disccountMsgContainer.innerHTML = `<p class="text-xl sm:text-xl text-green-400 lg:text-3xl">Llevas 3 o más. Te haremos el descuento en Whatsapp</p>`;
+    disccountMsgContainer.innerHTML = `<p class="text-2xl sm:text-2xl text-green-400 lg:text-3xl">Llevas 3 o más. Tú envío es gratis!</p>`;
   } else {
     disccountMsgContainer.innerHTML = ``;
   }
