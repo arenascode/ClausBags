@@ -2,13 +2,13 @@
   {
     "id": "cb1",
     "nombre": "Claus Bag 1",
-    "imagen": "src/assets/products/HK-06_xs.webp",
+    "imagen": "src/assets/products/cbRed_xs.webp",
     "precio": "55000"
   },
   {
     "id": "cb2",
     "nombre": "Claus Bag 2",
-    "imagen": "src/assets/products/HK-08_xs.webp",
+    "imagen": "src/assets/products/cbGreen_xs.webp",
     "precio": "55000"
   },
   {
