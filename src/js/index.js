@@ -28,7 +28,7 @@ class Producto {
   }
 }
 
-//*Create  and show the stock
+//*Create  and show the stock. --/
 let stock = [
   {
     id: "cb1",
