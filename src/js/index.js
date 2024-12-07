@@ -34,6 +34,7 @@ let stock = [
     id: "cb1",
     nombre: "Claus Bag 1",
     imagen: "products/cbRed_xs.webp",
+    imagen2: "products/cb1.webp",
     precio: "55000",
     precio_viejo: "70,000",
   },
@@ -41,6 +42,7 @@ let stock = [
     id: "cb2",
     nombre: "Claus Bag 2",
     imagen: "products/cbGreen_xs.webp",
+    imagen2: "products/cb2.png",
     precio: "55000",
     precio_viejo: "70,000",
   },
@@ -48,6 +50,7 @@ let stock = [
     id: "cb3",
     nombre: "Claus Bag 3",
     imagen: "products/cb_3_xs.webp",
+    imagen2: "products/cb3.webp",
     precio: "50000",
     precio_viejo: "65,000",
   },
@@ -55,6 +58,7 @@ let stock = [
     id: "cb4",
     nombre: "Claus Bag 4",
     imagen: "products/HK-X8_xs.webp",
+    imagen2: "products/cb4.webp",
     precio: "50000",
     precio_viejo: "65,000",
   },
@@ -62,6 +66,7 @@ let stock = [
     id: "cb5",
     nombre: "Claus Bag 5",
     imagen: "products/HK-32_xs.webp",
+    imagen2: "products/cb5.webp",
     precio: "60000",
     precio_viejo: "75,000",
   },
@@ -69,6 +74,7 @@ let stock = [
     id: "cb6",
     nombre: "Claus Bag 6",
     imagen: "products/CB-LineaVerde_xs.webp",
+    imagen2: "products/cb6.webp",
     precio: "60000",
     precio_viejo: "75,000",
   },
@@ -76,6 +82,7 @@ let stock = [
     id: "cb7",
     nombre: "Claus Bag 7",
     imagen: "products/CB-LineaRoja_xs.webp",
+    imagen2: "products/cb7.webp",
     precio: "60000",
     precio_viejo: "75,000",
   },
@@ -83,6 +90,7 @@ let stock = [
     id: "cb8",
     nombre: "Claus Bag 8",
     imagen: "products/HK-19_xs.webp",
+    imagen2: "products/cb8.webp",
     precio: "50000",
     precio_viejo: "65,000",
   },
@@ -91,7 +99,7 @@ let stock = [
 function showProducts() {
   console.log(`showing products`);
 
-  stock.forEach((product) => {
+  stock.forEach((product, index) => {
     let productCard = document.createElement("div");
     const formattedPrice = `$${product.precio
       .toString()
@@ -101,13 +109,22 @@ function showProducts() {
       "productContainer w-full shadow-xl flex flex-row p-1 sm:p-4 dark:bg-[#1E3D32] bg-white rounded-lg border border-gray-300  md:w-[48%] lg:w-[49%]"
     );
     productCard.innerHTML = `
-      <figure class="flex align-top w-52 pb-0 rounded-lg ">
-              <img
-                src=${product.imagen}
-                alt="car!"
-                class="h-auto rounded-lg"
-              />
+            <div id="carouselImgs-${index}" class="carousel">
+            <figure id="slide1-${index}" class="carousel-item flex align-top w-52 pb-0 rounded-lg active">
+              <img src=${product.imagen} class="shadowImg" alt="bag" />
+                <div class="nav-buttons">
+                <button class="prev" data-index="${index}">❮</button>
+                <button class="next" data-index="${index}">❯</button>
+                </div>
             </figure>
+            <figure id="slide2-${index}" class="carousel-item flex align-top w-52 pb-0 rounded-lg">
+              <img src=${product.imagen2} class="shadowImg" alt="bag" />
+                <div class="nav-buttons">
+                <button class="prev" data-index="${index}">❮</button>
+                <button class="next" data-index="${index}">❯</button>
+                </div>
+            </figure>
+            </div>
             <div class="card-body p-2 px-1 pl-3 leading-3">
               <h5 class="card-title text-[1.7rem] tracking-widest dark:text-red-400">
                 ${product.nombre}
@@ -162,6 +179,41 @@ function showProducts() {
       .querySelector(".catalogoProductsContainer")
       .appendChild(productCard);
   });
+  
+  const navButtons = document.querySelectorAll('.nav-buttons button')
+
+  
+  navButtons.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      const index = event.target.getAttribute("data-index")
+      console.log({index});
+      
+      const direction = event.target.classList.contains("next") ? 1 : -1
+      console.log({direction});
+      
+      handleCarouselSlide(index, direction)
+    })
+  })
+
+  function handleCarouselSlide(index, direction) {
+    console.log({index});
+    
+    const slides = document.querySelectorAll(
+      `#carouselImgs-${index} .carousel-item`
+    );
+    console.log({slides});
+    
+    const activeSlide = document.querySelector(
+      `#carouselImgs-${index} .carousel-item.active`
+    );
+    console.log({activeSlide});
+    
+    let currentIndex = Array.from(slides).indexOf(activeSlide);
+    let nextIndex = (currentIndex + direction + slides.length) % slides.length;
+
+    slides[currentIndex].classList.remove("active");
+    slides[nextIndex].classList.add("active");
+  }
 
   const addToCartBtns = document.querySelectorAll(".addToCartBtn");
   addToCartBtns.forEach((addToCartBtn) => {
@@ -173,6 +225,8 @@ function showProducts() {
   btnsItemCount.forEach((e) => {
     e.addEventListener("click", handleItemCount);
   });
+
+
 }
 
 // showProducts()
@@ -269,13 +323,13 @@ function cartQty() {
 //**Calculate Total Cart */
 function totalCart() {
   const totalCartContainer = document.querySelector(".totalCart");
-  
+
   const totalCart = cart.reduce((total, item) => {
-    console.log({precio: item.precio});
-    
+    console.log({ precio: item.precio });
+
     total += parseInt(item.qty) * parseInt(item.precio);
     console.log({ total });
-    
+
     return total;
   }, 0);
   const formatedTotalCart = `${totalCart
@@ -325,15 +379,14 @@ function showCart() {
     });
     orderedCart.forEach((cartItem) => {
       const cardProduct = document.createElement("div");
-      const formattedTotalItem = `${
-        (cartItem.precio *
-        cartItem.qty).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      }`;
+      const formattedTotalItem = `${(cartItem.precio * cartItem.qty)
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
       cardProduct.setAttribute(
         "class",
         "productContainer w-full shadow-xl flex flex-row p-1 sm:p-2 bg-white rounded-lg border border-gray-300 gap-3 lg:w-[41%] dark:bg-[#1E3D32]"
       );
-      
+
       cardProduct.innerHTML = `
     <div data-pid=${cartItem.id} class="sm:w-40">
       <figure class="flex align-top w-28 h-28 sm:h-44  pb-0 rounded-lg m-1 sm:w-44">

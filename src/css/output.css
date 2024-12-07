@@ -1363,6 +1363,21 @@ input:checked + .toggle-bg {
   scrollbar-width: none;
 }
 
+.carousel-item {
+  box-sizing: content-box;
+  display: flex;
+  flex: none;
+  scroll-snap-align: start;
+}
+
+.carousel-center .carousel-item {
+  scroll-snap-align: center;
+}
+
+.carousel-end .carousel-item {
+  scroll-snap-align: end;
+}
+
 .checkbox {
   flex-shrink: 0;
   --chkbg: var(--bc);
@@ -4700,6 +4715,53 @@ p {
 .carouselReviewsContainer {
   background-image: none;
   margin-top: 1rem;
+}
+
+/** Catalogue Section */
+
+.carousel {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item .shadowImg {
+  filter: drop-shadow(
+0 0 10px rgba(0, 0, 0, 0.5)
+);
+}
+
+.carousel-item.active {
+  display: block;
+  opacity: 1
+}
+
+.nav-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.nav-buttons button {
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  color: black;
+  padding: 5px 10px;
+  padding-left: 12px;
+  cursor: pointer;
+  text-align: center;
 }
 
 /** Footer Section */
