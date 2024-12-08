@@ -111,7 +111,7 @@ function showProducts() {
     productCard.innerHTML = `
             <div id="carouselImgs-${index}" class="carousel">
             <figure id="slide1-${index}" class="carousel-item flex align-top w-52 pb-0 rounded-lg active">
-              <img src=${product.imagen} class="shadowImg" alt="bag" />
+              <img src=${product.imagen} alt="bag" />
                 <div class="nav-buttons">
                 <button class="prev" data-index="${index}">❮</button>
                 <button class="next" data-index="${index}">❯</button>
